@@ -1,0 +1,17 @@
+
+["Client Settings"]
+	#Toggle whether to render the external scanner on the Tardis Monitor Block
+	externalMonitor = true
+	#List block ids that will be blacklisted from rendering in the Tardis Monitor Scanner Mode
+	#Seperate every entry except the last one with commas
+	#To blacklist all blocks from a mod, use YourModId:*
+	scannerBlacklistedBlocks = [""]
+
+	["Client Settings"."Vortex Manipulator"]
+		#Toggles whether the Vortex Manipulator in the inventory will open its GUI if the player right clicks with an empty hand
+		openVMEmptyHand = true
+
+	["Client Settings"."Tardis Client Settings"]
+		#Toggles whether to shake the camera during flight and when the exterior is hit
+		interiorShake = true
+

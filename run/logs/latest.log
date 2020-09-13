@@ -1,0 +1,94 @@
+[13Sep2020 15:48:16.810] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--gameDir, ., --launchTarget, fmluserdevclient, --fml.mcpVersion, 20190829.143755, --fml.mcVersion, 1.14.4, --fml.forgeGroup, net.minecraftforge, --fml.forgeVersion, 28.2.23, --version, MOD_DEV, --assetIndex, 1.14, --assetsDir, C:\Users\Clayt\.gradle\caches\forge_gradle\assets, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Sep2020 15:48:16.815] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 4.1.0+62+5bfa59b starting: java version 1.8.0_221 by Oracle Corporation
+[13Sep2020 15:48:17.412] [main/INFO] [net.minecraftforge.fml.loading.FixSSL/CORE]: Added Lets Encrypt root certificates as additional trust
+[13Sep2020 15:48:19.045] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'fmluserdevclient' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\Clayt\.gradle\caches\forge_gradle\assets, --assetIndex, 1.14, --username, Dev, --accessToken, ❄❄❄❄❄❄❄❄, --userProperties, {}]
+[13Sep2020 15:48:21.879] [Client thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[13Sep2020 15:48:38.078] [Client thread/WARN] [net.minecraft.client.GameSettings/]: Skipping bad option: lastServer:
+[13Sep2020 15:48:38.102] [Client thread/INFO] [net.minecraft.client.Minecraft/]: LWJGL Version: 3.2.2 build 10
+[13Sep2020 15:48:39.281] [modloading-worker-2/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 28.2.23, for MC 1.14.4 with MCP 20190829.143755
+[13Sep2020 15:48:39.281] [modloading-worker-2/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v28.2.23 Initialized
+[13Sep2020 15:48:39.364] [modloading-worker-3/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.049] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.056] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.057] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.058] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.060] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.062] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.064] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity tardis:dalek
+[13Sep2020 15:48:40.066] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:40.068] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity tardis:bessie
+[13Sep2020 15:48:40.074] [modloading-worker-1/WARN] [net.minecraft.entity.EntityType/]: No data fixer registered for entity 
+[13Sep2020 15:48:43.904] [Client thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[13Sep2020 15:48:44.039] [Server-Worker-1/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file E:\PROJECTS\Minecraft Mods\MastersDelight\run\config\tardis-common.toml is not correct. Correcting
+[13Sep2020 15:48:44.223] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[13Sep2020 15:48:44.353] [Server-Worker-1/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Dispatching synchronous work after COMMON_SETUP: 1 jobs
+[13Sep2020 15:48:46.198] [Server-Worker-1/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Synchronous work queue completed in 00:00:01.839
+[13Sep2020 15:48:46.898] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: AHEAD Current: 28.2.23 Target: null
+[13Sep2020 15:48:46.946] [Server-Worker-1/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Dispatching synchronous work after SIDED_SETUP: 1 jobs
+[13Sep2020 15:48:46.962] [Server-Worker-1/INFO] [net.minecraftforge.fml.DeferredWorkQueue/LOADING]: Synchronous work queue completed in 00:00:00.015
+[13Sep2020 15:48:50.326] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: tardis:blockstates/fluid_block.json: java.io.FileNotFoundException: tardis:blockstates/fluid_block.json
+[13Sep2020 15:48:50.327] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: 'tardis:blockstates/fluid_block.json' missing model for variant: 'tardis:fluid_block#'
+[13Sep2020 15:48:50.328] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: tardis:blockstates/item_access_panel.json: java.io.FileNotFoundException: tardis:blockstates/item_access_panel.json
+[13Sep2020 15:48:50.328] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: 'tardis:blockstates/item_access_panel.json' missing model for variant: 'tardis:item_access_panel#'
+[13Sep2020 15:48:50.384] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: master:blockstates/temporal_siphon.json: java.io.FileNotFoundException: master:blockstates/temporal_siphon.json
+[13Sep2020 15:48:50.384] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Exception loading blockstate definition: 'master:blockstates/temporal_siphon.json' missing model for variant: 'master:temporal_siphon#'
+[13Sep2020 15:48:51.881] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Unable to load model: 'tardis:fluid_block#inventory' referenced from: tardis:fluid_block#inventory: java.io.FileNotFoundException: tardis:models/item/fluid_block.json
+[13Sep2020 15:48:51.882] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Unable to load model: 'tardis:item_access_panel#inventory' referenced from: tardis:item_access_panel#inventory: java.io.FileNotFoundException: tardis:models/item/item_access_panel.json
+[13Sep2020 15:48:51.902] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Unable to load model: 'master:temporal_siphon#inventory' referenced from: master:temporal_siphon#inventory: java.io.FileNotFoundException: master:models/item/temporal_siphon.json
+[13Sep2020 15:48:51.903] [Server-Worker-3/WARN] [net.minecraft.client.renderer.model.ModelBakery/]: Unable to load model: 'master:electric_bars#inventory' referenced from: master:electric_bars#inventory: java.io.FileNotFoundException: master:models/item/electric_bars.json
+[13Sep2020 15:48:52.588] [Server-Worker-3/WARN] [net.minecraft.client.renderer.texture.AtlasTexture/]: Texture tardis:blocks/cube_glow with size 20x20 limits mip level from 4 to 2
+[13Sep2020 15:48:53.576] [Client thread/WARN] [net.minecraft.client.GameSettings/]: Skipping bad option: lastServer:
+[13Sep2020 15:48:53.624] [Client thread/WARN] [net.minecraft.client.audio.SoundEngine/]: Missing sound for event: tardis:communicator_steam
+[13Sep2020 15:48:53.699] [Client thread/INFO] [net.minecraft.client.audio.SoundSystem/]: OpenAL initialized.
+[13Sep2020 15:48:53.701] [Client thread/INFO] [net.minecraft.client.audio.SoundEngine/SOUNDS]: Sound engine started
+[13Sep2020 15:48:53.866] [Client thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 1024x1024 textures-atlas
+[13Sep2020 15:48:54.706] [Client thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256 textures/particle-atlas
+[13Sep2020 15:48:54.708] [Client thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 256x256 textures/painting-atlas
+[13Sep2020 15:48:54.709] [Client thread/INFO] [net.minecraft.client.renderer.texture.AtlasTexture/]: Created: 128x128 textures/mob_effect-atlas
+[13Sep2020 15:48:55.768] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[13Sep2020 15:49:01.462] [Client thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[13Sep2020 15:49:01.462] [Client thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13Sep2020 15:49:01.463] [Client thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13Sep2020 15:49:01.464] [Client thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[13Sep2020 15:49:01.465] [Client thread/WARN] [net.minecraft.command.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13Sep2020 15:49:01.641] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Starting integrated minecraft server version 1.14.4
+[13Sep2020 15:49:01.641] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Generating keypair
+[13Sep2020 15:49:01.827] [Server thread/INFO] [net.minecraftforge.common.DimensionManager/DIMS]: Registered dimension tardis:vortex of type tardis:vortex and id 3
+[13Sep2020 15:49:01.828] [Server thread/INFO] [net.minecraftforge.common.DimensionManager/DIMS]: Registered dimension tardis:380df991-f603-344c-a090-369bad2a924a of type tardis:tardis and id 4
+[13Sep2020 15:49:01.837] [Server thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this SERVER instance
+[13Sep2020 15:49:02.116] [Server thread/INFO] [net.minecraft.resources.SimpleReloadableResourceManager/]: Reloading ResourceManager: Default, forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-recomp.jar, main, TardisMod-1-14-master-SNAPSHOT_mapped_stable_58-1.14.4.jar
+[13Sep2020 15:49:03.875] [Server thread/INFO] [net.minecraft.item.crafting.RecipeManager/]: Loaded 6 recipes
+[13Sep2020 15:49:05.535] [Server thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 824 advancements
+[13Sep2020 15:49:06.398] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[13Sep2020 15:49:07.392] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[13Sep2020 15:49:07.392] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[13Sep2020 15:49:07.426] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 0%
+[13Sep2020 15:49:09.858] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[13Sep2020 15:49:09.858] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[13Sep2020 15:49:09.859] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[13Sep2020 15:49:09.859] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 83%
+[13Sep2020 15:49:09.925] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 87%
+[13Sep2020 15:49:10.425] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 95%
+[13Sep2020 15:49:10.925] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Preparing spawn area: 96%
+[13Sep2020 15:49:11.192] [Client thread/INFO] [net.minecraft.world.chunk.listener.LoggingChunkStatusListener/]: Time elapsed: 4768 ms
+[13Sep2020 15:49:11.970] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (vortex): All chunks are saved
+[13Sep2020 15:49:11.971] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[13Sep2020 15:49:11.971] [Server thread/INFO] [net.minecraft.world.server.ChunkManager/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[13Sep2020 15:49:12.731] [Server thread/INFO] [STDOUT/]: [net.tardis.mod.tileentities.exteriors.ExteriorTile:lambda$tick$6:190]: Load enqueued
+[13Sep2020 15:49:12.732] [Server thread/INFO] [STDOUT/]: [net.tardis.mod.tileentities.exteriors.ExteriorTile:lambda$null$5:195]: Setup exterior
+[13Sep2020 15:49:14.295] [Netty Local Client IO #0/INFO] [net.minecraftforge.fml.network.NetworkHooks/]: Connected to a modded server.
+[13Sep2020 15:49:14.437] [Server thread/INFO] [net.minecraftforge.common.AdvancementLoadFix/]: Using new advancement loading for net.minecraft.advancements.PlayerAdvancements@3ac4e31a
+[13Sep2020 15:49:14.564] [Server thread/INFO] [net.minecraft.server.management.PlayerList/]: Dev[local:E:8a56dee3] logged in with entity id 243 at (0.5775244901704795, 128.0, -1.154690617453027)
+[13Sep2020 15:49:14.598] [Client thread/ERROR] [net.minecraftforge.fml.network.simple.IndexedMessageCodec/SIMPLENET]: Received empty payload on channel fml:handshake
+[13Sep2020 15:49:14.610] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[13Sep2020 15:49:15.228] [Server thread/ERROR] [net.minecraftforge.fml.network.simple.IndexedMessageCodec/SIMPLENET]: Received empty payload on channel fml:handshake
+[13Sep2020 15:49:15.260] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
+[13Sep2020 15:49:15.274] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/tardis:380df991-f603-344c-a090-369bad2a924a
+[13Sep2020 15:49:15.347] [Client thread/WARN] [net.minecraft.client.network.play.ClientPlayNetHandler/]: Unknown custom packet identifier: tardis:main_channel
+[13Sep2020 15:49:15.349] [Client thread/WARN] [net.minecraft.client.network.play.ClientPlayNetHandler/]: Unknown custom packet identifier: tardis:main_channel
+[13Sep2020 15:49:15.350] [Client thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 20 advancements
+[13Sep2020 15:49:15.427] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/minecraft:overworld
+[13Sep2020 15:49:17.454] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 2151ms or 43 ticks behind
+[13Sep2020 15:49:31.853] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer/]: Saving and pausing game...
+[13Sep2020 15:49:31.858] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/tardis:380df991-f603-344c-a090-369bad2a924a
+[13Sep2020 15:49:31.964] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'New World'/minecraft:overworld

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.gitlab.Spectre0987:TardisMod-1-14:master-SNAPSHOT_mapped_stable_58-1.14.4">
+    <CLASSES>
+      <root url="file://$APPLICATION_HOME_DIR$/jbr/bin/Could not resolve com.gitlab.Spectre0987:TardisMod-1-14:master-SNAPSHOT_mapped_stable_58-1.14.4." />
+      <root url="jar://$USER_HOME$/.gradle/caches/forge_gradle/deobf_dependencies/com/gitlab/Spectre0987/TardisMod-1-14/master-SNAPSHOT_mapped_stable_58-1.14.4/TardisMod-1-14-master-SNAPSHOT_mapped_stable_58-1.14.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

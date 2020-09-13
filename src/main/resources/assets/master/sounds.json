@@ -1,0 +1,23 @@
+{
+  "drill_loop": {
+    "category": "block",
+    "subtitle": "master.subtitle.drill_loop",
+    "sounds": [
+      {
+        "name": "master:drill_loop",
+        "stream": true
+      }
+    ]
+  },
+
+  "throttle_blast": {
+    "category": "block",
+    "subtitle": "master.subtitle.time_blast",
+    "sounds": [
+      {
+        "name": "master:tardis/time_blast",
+        "stream": true
+      }
+    ]
+  }
+}

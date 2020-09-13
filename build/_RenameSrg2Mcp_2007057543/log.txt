@@ -1,0 +1,12 @@
+Args: "--task", "SRG_TO_MCP", "--input", "C:\Users\Clayt\.gradle\caches\modules-2\files-2.1\com.gitlab.Spectre0987\TardisMod-1-14\master-SNAPSHOT\39f5086b759753497b27d705b7c013f8f7e31be6\TardisMod-1-14-master-SNAPSHOT.jar", "--output", "C:\Users\Clayt\.gradle\caches\forge_gradle\deobf_dependencies\com\gitlab\Spectre0987\TardisMod-1-14\master-SNAPSHOT_mapped_stable_58-1.14.4\TardisMod-1-14-master-SNAPSHOT_mapped_stable_58-1.14.4.jar", "--mcp", "C:\Users\Clayt\.gradle\caches\forge_gradle\maven_downloader\de\oceanlabs\mcp\mcp_stable\58-1.14.4\mcp_stable-58-1.14.4.zip", "--strip-signatures"
+Classpath: C:\Users\Clayt\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\installertools\1.1.10\installertools-1.1.10-fatjar.jar
+WorkDir: E:\PROJECTS\Minecraft Mods\MastersDelight\build\_RenameSrg2Mcp_2007057543
+Main: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  C:\Users\Clayt\.gradle\caches\modules-2\files-2.1\com.gitlab.Spectre0987\TardisMod-1-14\master-SNAPSHOT\39f5086b759753497b27d705b7c013f8f7e31be6\TardisMod-1-14-master-SNAPSHOT.jar
+Output: C:\Users\Clayt\.gradle\caches\forge_gradle\deobf_dependencies\com\gitlab\Spectre0987\TardisMod-1-14\master-SNAPSHOT_mapped_stable_58-1.14.4\TardisMod-1-14-master-SNAPSHOT_mapped_stable_58-1.14.4.jar
+MCP:    C:\Users\Clayt\.gradle\caches\forge_gradle\maven_downloader\de\oceanlabs\mcp\mcp_stable\58-1.14.4\mcp_stable-58-1.14.4.zip
+Loading MCP Data
+Stripped Manifest of sha digests
+Process complete
