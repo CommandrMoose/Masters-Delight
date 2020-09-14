@@ -80,6 +80,7 @@ public class CommonEvents {
                         tile.setDestination(DimensionType.OVERWORLD, new BlockPos(0,64,0));
                         tile.getInteriorManager().setAlarmOn(true);
                         tile.getWorld().playSound(null, tile.getPos(), MSounds.ALERT_ALARM, SoundCategory.BLOCKS, 0.4f,1f);
+                        //
                     }
                 }
             });
