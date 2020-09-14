@@ -1,0 +1,109 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 13/09/20 5:38 PM
+Description: Ticking entity
+
+java.lang.ClassCastException: net.minecraft.entity.passive.TurtleEntity cannot be cast to net.tardis.mod.entity.ControlEntity
+	at commandrmoose.master.events.CommonEvents.onLivingTick(CommonEvents.java:69) ~[main/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_8_CommonEvents_onLivingTick_LivingUpdateEvent.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80) ~[eventbus-1.0.0-service.jar:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258) ~[eventbus-1.0.0-service.jar:?] {}
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:315) ~[?:?] {re:classloading}
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:1964) ~[?:?] {re:classloading}
+	at net.minecraft.entity.MobEntity.tick(MobEntity.java:274) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.updateEntity(ServerWorld.java:587) ~[?:?] {re:classloading}
+	at net.minecraft.world.World.guardEntityTick(World.java:689) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.server.ServerWorld.tick(ServerWorld.java:394) ~[?:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:831) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:766) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:112) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:624) [?:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_221] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at commandrmoose.master.events.CommonEvents.onLivingTick(CommonEvents.java:69)
+	at net.minecraftforge.eventbus.ASMEventHandler_8_CommonEvents_onLivingTick_LivingUpdateEvent.invoke(.dynamic)
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:80)
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:258)
+	at net.minecraftforge.common.ForgeHooks.onLivingUpdate(ForgeHooks.java:315)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity.java:1964)
+	at net.minecraft.entity.MobEntity.tick(MobEntity.java:274)
+	at net.minecraft.world.server.ServerWorld.updateEntity(ServerWorld.java:587)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:turtle (net.minecraft.entity.passive.TurtleEntity)
+	Entity ID: 1
+	Entity Name: Turtle
+	Entity's Exact location: -150.52, 63.00, -5.40
+	Entity's Block location: World: (-151,63,-6), Chunk: (at 9,3,10 in -10,-1; contains blocks -160,0,-16 to -145,255,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.guardEntityTick(World.java:689)
+	at net.minecraft.world.server.ServerWorld.tick(ServerWorld.java:394)
+
+-- Affected level --
+Details:
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 2754
+	Level dimension: DimensionType{minecraft:overworld}
+	Level name: New World
+	Level seed: -221421910634652732
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: {}
+	Level spawn location: World: (-160,64,4), Chunk: (at 0,4,4 in -10,0; contains blocks -160,0,0 to -145,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 61885 game time, 61885 day time
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 42881 (now: false), thunder time: 86302 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:831)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:766)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:112)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.4
+	Minecraft Version ID: 1.14.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_221, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 900682760 bytes (858 MB) / 2245525504 bytes (2141 MB) up to 3793747968 bytes (3618 MB)
+	CPUs: 8
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	ModLauncher: 4.1.0+62+5bfa59b
+	ModLauncher launch target: fmluserdevclient
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		/eventbus-1.0.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-launcher.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-launcher.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-1.0.5-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-launcher.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-launcher.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-launcher.jar fml TRANSFORMATIONSERVICE 
+	FML: 28.2
+	Forge: net.minecraftforge:28.2.23
+	FML Language Providers: 
+		javafml@28.2
+		minecraft@1
+	Mod List: 
+		client-extra.jar Minecraft {minecraft@1.14.4 DONE}
+		forge-1.14.4-28.2.23_mapped_stable_58-1.14.4-recomp.jar Forge {forge@28.2.23 DONE}
+		TardisMod-1-14-master-SNAPSHOT_mapped_stable_58-1.14.4.jar TARDIS Mod {tardis@1.4.1 DONE}
+		main The Master's Delight {master@0.0.1 DONE}
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:forge, mod:master, mod:tardis
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'

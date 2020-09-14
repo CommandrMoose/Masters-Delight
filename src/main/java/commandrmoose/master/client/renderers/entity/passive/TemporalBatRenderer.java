@@ -32,10 +32,11 @@ public class TemporalBatRenderer extends MobRenderer<TemporalBatEntity, Temporal
     @Override
     public void doRender(TemporalBatEntity entity, double x, double y, double z, float entityYaw, float partialTicks) {
             GlStateManager.pushMatrix();
-            GlStateManager.scaled(0.5F, 0.5F, 0.5F);
-            GlStateManager.popMatrix();
+            GlStateManager.enableBlend();
+            GlStateManager.color4f(0.7F, 0.7F, 1F, 0.5F);
             super.doRender(entity,x,y,z,entityYaw,partialTicks);
-
+            GlStateManager.disableBlend();
+            GlStateManager.popMatrix();
     }
 }
 

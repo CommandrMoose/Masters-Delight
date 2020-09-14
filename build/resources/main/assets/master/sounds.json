@@ -19,5 +19,15 @@
         "stream": true
       }
     ]
+  },
+  "alert_alarm": {
+    "category": "block",
+    "subtitle": "master.subtitle.alert_alarm",
+    "sounds": [
+      {
+        "name": "master:tardis/alert_alarm",
+        "stream": true
+      }
+    ]
   }
 }

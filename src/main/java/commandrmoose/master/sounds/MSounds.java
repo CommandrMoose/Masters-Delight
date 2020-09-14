@@ -20,6 +20,7 @@ public class MSounds {
 
     public static final SoundEvent DRILL_LOOP = null;
     public static final SoundEvent THROTTLE_BLAST = null;
+    public static final SoundEvent ALERT_ALARM = null;
 
     private static HashMap<ResourceLocation, ISoundScheme> SCHEMES = new HashMap<ResourceLocation, ISoundScheme>();
 
@@ -28,7 +29,8 @@ public class MSounds {
         event.getRegistry().registerAll(
                 // SOUNDS
             setUpSound("drill_loop"),
-            setUpSound("throttle_blast")
+            setUpSound("throttle_blast"),
+            setUpSound("alert_alarm")
 
         );
     }

@@ -2,7 +2,7 @@
 ["Tardis Configurations"]
 	#List of dimensions Tardis cannot travel to, everything else is allowed
 	#Seperate every entry except the last one with commas
-	blacklistedDims = ["minecraft:the_end"]
+	blacklistedDims = []
 	#Adjusts cooldown time in seconds after deleting a room using the ARS Tablet
 	#Recommend minimum 10 seconds to reduce unintended issues
 	arsDeleteRoomCooldown = 11
