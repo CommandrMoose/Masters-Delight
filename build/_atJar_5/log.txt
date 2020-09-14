@@ -1,5 +1,0 @@
-Args: "--inJar", "C:\Users\Clayt\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.14.4-28.2.23\forge-1.14.4-28.2.23-injected.jar", "--outJar", "C:\Users\Clayt\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.14.4-28.2.23_mapped_stable_58-1.14.4\forge-1.14.4-28.2.23_mapped_stable_58-1.14.4.jar", "--logFile", "accesstransform.log", "--atFile", "E:\PROJECTS\Minecraft Mods\MastersDelight\build\_atJar_5\parent_at.cfg"
-Classpath: C:\Users\Clayt\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\1.0.5\accesstransformers-1.0.5-fatjar.jar
-WorkDir: E:\PROJECTS\Minecraft Mods\MastersDelight\build\_atJar_5
-Main: net.minecraftforge.accesstransformer.TransformerProcessor
-====================================
