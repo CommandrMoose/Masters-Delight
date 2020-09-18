@@ -10,6 +10,7 @@ import net.minecraft.client.MinecraftGame;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.EndPortalTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -26,6 +27,7 @@ import net.minecraft.world.gen.placement.EndIsland;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.extensions.IForgeWorldServer;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -77,23 +79,37 @@ public class CommonEvents {
                 }
             });
 
+
+
+
+
             TardisHelper.getConsoleInWorld(event.world).ifPresent(tile -> {
                 if (tile.getDestinationDimension() == DimensionType.THE_END){
                     if (tile.isInFlight()){
                         ServerWorld world = tile.getWorld().getServer().func_71218_a(tile.getDestinationDimension());
+                        if (world != null){
+                            if (!Helper.hasDragonBeenKilled(world)) {
+                                Random rand = new Random();
+                                tile.setDestination(DimensionType.OVERWORLD, new BlockPos(-1000 + rand.nextInt(2000), 64, -1000 + rand.nextInt(2000)));
+                                tile.getInteriorManager().setAlarmOn(true);
+                                tile.getWorld().playSound(null, tile.getPos(), MSounds.ALERT_ALARM, SoundCategory.BLOCKS, 0.4f,1f);
 
-                        if (!Helper.hasDragonBeenKilled(world)) {
-                            Random rand = new Random();
-                            tile.setDestination(DimensionType.OVERWORLD, new BlockPos(-1000 + rand.nextInt(2000), 64, -1000 + rand.nextInt(2000)));
-                            tile.getInteriorManager().setAlarmOn(true);
-                            tile.getWorld().playSound(null, tile.getPos(), MSounds.ALERT_ALARM, SoundCategory.BLOCKS, 0.4f,1f);
+                            }
                         }
-
                     }
                 }
             });
         }
     }
 
+    @SubscribeEvent
+    public static void onEntityJoin(EntityJoinWorldEvent event){
+        if(event.getWorld().getDimension().getType().getModType() == TDimensions.VORTEX) {
+            if (event.getEntity() instanceof ServerPlayerEntity) {
+                event.getWorld().playSound(null, event.getEntity().getPosition(), MSounds.TIME_VORTEX, SoundCategory.MUSIC, 100f , 1);
+            }
+
+        }
+    }
 
 }

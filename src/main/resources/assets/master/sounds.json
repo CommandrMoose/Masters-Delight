@@ -10,6 +10,17 @@
     ]
   },
 
+  "time_vortex": {
+    "category": "music",
+    "subtitle": "master.subtitle.time_vortex",
+    "sounds": [
+      {
+        "name": "master:time_vortex",
+        "stream": true
+      }
+    ]
+  },
+
   "throttle_blast": {
     "category": "block",
     "subtitle": "master.subtitle.time_blast",

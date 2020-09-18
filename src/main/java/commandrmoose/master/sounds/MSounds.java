@@ -21,6 +21,7 @@ public class MSounds {
     public static final SoundEvent DRILL_LOOP = null;
     public static final SoundEvent THROTTLE_BLAST = null;
     public static final SoundEvent ALERT_ALARM = null;
+    public static final SoundEvent TIME_VORTEX = null;
 
     private static HashMap<ResourceLocation, ISoundScheme> SCHEMES = new HashMap<ResourceLocation, ISoundScheme>();
 
@@ -30,7 +31,8 @@ public class MSounds {
                 // SOUNDS
             setUpSound("drill_loop"),
             setUpSound("throttle_blast"),
-            setUpSound("alert_alarm")
+            setUpSound("alert_alarm"),
+            setUpSound("time_vortex")
 
         );
     }
