@@ -21,6 +21,7 @@ public class MTiles {
     public static List<TileEntityType<?>> TYPES = new ArrayList<>();
 
     public static TileEntityType<TemporalSiphonTile> TEMPORAL_SIPHON = register(TemporalSiphonTile::new, "temporal_siphon", MBlocks.temporal_siphon);
+    public static TileEntityType<HalliganKitTile> HALLIGAN_KIT = register(HalliganKitTile::new, "halligan_kit", MBlocks.halligan_kit);
 
     @SubscribeEvent
     public static void register(RegistryEvent.Register<TileEntityType<?>> event){

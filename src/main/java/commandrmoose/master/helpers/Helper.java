@@ -13,18 +13,18 @@ public class Helper {
 
     public static boolean hasDragonBeenKilled(World worldln) {
 
-        for(int i = -8; i <= 8; ++i) {
-            for(int j = -8; j <= 8; ++j) {
-                Chunk chunk = worldln.getChunk(i, j);
-
-                for(TileEntity tileentity : chunk.getTileEntityMap().values()) {
-                    if (tileentity instanceof EndPortalTileEntity) {
-                        return true;
+        if (worldln != null) {
+            for(int i = -8; i <= 8; ++i) {
+                for(int j = -8; j <= 8; ++j) {
+                    Chunk chunk = worldln.getChunk(i, j);
+                    for(TileEntity tileentity : chunk.getTileEntityMap().values()) {
+                        if (tileentity instanceof EndPortalTileEntity) {
+                            return true;
+                        }
                     }
                 }
             }
         }
         return false;
     }
-
 }

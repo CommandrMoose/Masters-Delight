@@ -53,8 +53,9 @@ public class TemporalBatEntity extends BatEntity implements IFlyingAnimal {
 
         TardisHelper.getConsoleInWorld(this.world).ifPresent(tile -> {
             float distance = (float) this.getPosition().distanceSq(tile.getPos());
-            if (distance < 5) {
+            if (distance < 5 && livingTime % 20 == 0) {
                 tile.setDestination(tile.getDestinationDimension(), new BlockPos(tile.getDestination().getX() + -100 + rand.nextInt(200), 64, tile.getDestination().getZ() + -100 + rand.nextInt(200)));
+                tile.getWorld().playSound(null, tile.getPos(), TSounds.GENERIC_ONE, SoundCategory.BLOCKS, 1f, 0.8f + rand.nextInt(4) / 10);
             }
 
         });

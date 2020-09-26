@@ -27,9 +27,14 @@ public class MBlocks {
 
     // Tiles
     public static TemporalSiphonBlock temporal_siphon = register(new TemporalSiphonBlock(Block.Properties.create(Material.ANVIL), SoundType.ANVIL, 1.25F, 4.2F), "temporal_siphon");
+    public static HalliganKitBlock halligan_kit = register(new HalliganKitBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 1.25f, 6f), "halligan_kit");
+
 
     // Electricity
     public static ElectricBarBlock electric_bars = register(new ElectricBarBlock(Block.Properties.create(Material.IRON)), "electric_bars");
+
+    // Blocks
+    public static ToasterBlock toaster = register(new ToasterBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 0.5f, 0.5f), "toaster");
 
 
     @SubscribeEvent

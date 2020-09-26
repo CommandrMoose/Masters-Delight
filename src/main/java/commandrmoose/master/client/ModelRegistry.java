@@ -2,9 +2,12 @@ package commandrmoose.master.client;
 
 import commandrmoose.master.Master;
 import commandrmoose.master.client.renderers.entity.passive.TemporalBatRenderer;
+import commandrmoose.master.client.renderers.tile.TemporalSiphonRenderer;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
+import commandrmoose.master.tiles.TemporalSiphonTile;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -17,6 +20,9 @@ public class ModelRegistry {
     @SubscribeEvent
     public static void register(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(TemporalBatEntity.class, TemporalBatRenderer::new);
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TemporalSiphonTile.class, new TemporalSiphonRenderer());
+
     }
 }
 

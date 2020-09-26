@@ -2,10 +2,8 @@ package commandrmoose.master.blocks;
 
 import commandrmoose.master.other.IMakeItem;
 import commandrmoose.master.tiles.TemporalSiphonTile;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
+import javafx.collections.transformation.TransformationList;
+import net.minecraft.block.*;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.command.arguments.NBTCompoundTagArgument;
 import net.minecraft.entity.LivingEntity;
@@ -23,6 +21,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
@@ -32,13 +31,16 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.common.UsernameCache;
 import net.minecraftforge.items.IItemHandler;
 import net.tardis.mod.Tardis;
+import net.tardis.mod.blocks.TBlocks;
 import net.tardis.mod.helper.Helper;
 import net.tardis.mod.helper.PlayerHelper;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.TItems;
 import net.tardis.mod.sounds.TSounds;
+import net.tardis.mod.tileentities.ConsoleTile;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -46,11 +48,8 @@ import java.util.Random;
 
 public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
-    //public static float maxArtron = 1000f;
     private BlockItem BLOCKITEM = new BlockItem(this, new Item.Properties().group(ItemGroup.REDSTONE).maxDamage(255));
     private boolean isWorking = false;
-    private float artronLevel = 0f;
-
 
     public TemporalSiphonBlock(Properties prop, SoundType soundType, float hardness, float resistance){
         super(prop.sound(soundType).hardnessAndResistance(hardness,resistance));
@@ -75,7 +74,12 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
     @Override
     public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.SOLID;
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 
     @Override
@@ -83,20 +87,24 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
         return BLOCKITEM;
     }
 
+
     @Override
     public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving){
         if(!worldIn.isRemote){
             TileEntity te = worldIn.getTileEntity(pos);
             if (te instanceof TemporalSiphonTile){
                 TardisHelper.getConsoleInWorld(worldIn).ifPresent(tile -> {
-                    // Check the distance between the block and the console unit.
-                    float distance = (float) pos.distanceSq(tile.getPos());
-                    if (distance < 1) {
+                    if (worldIn.getTileEntity(te.getPos().down()) instanceof ConsoleTile) {
                         tile.getInteriorManager().setAlarmOn(true);
                         ((TemporalSiphonTile) te).isWorking = true;
                         this.isWorking = true;
                     }
                 });
+
+                if (worldIn.getBlockState(te.getPos().down()).getBlock() == TBlocks.engine) {
+                    ((TemporalSiphonTile) te).setDraining(true);
+                }
+
             }
 
         }
@@ -140,11 +148,13 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
             if (tileentity instanceof TemporalSiphonTile) {
 
                 ItemStack item = new ItemStack(MBlocks.temporal_siphon);
+
                 CompoundNBT nbt = item.getOrCreateChildTag("artron_value");
                 float artron = ((TemporalSiphonTile) tileentity).getArtronNumber();
-                this.artronLevel = artron;
                 nbt.putFloat("artron_value", artron);
+                item.setTag(nbt);
 
+                item.setDamage(255 - (int)(255 * artron/255));
                 ItemEntity itementity = new ItemEntity(worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), item);
                 itementity.setDefaultPickupDelay();
                 worldIn.addEntity(itementity);
@@ -152,7 +162,6 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
         }
     }
-
 
     @Override
     @OnlyIn(Dist.CLIENT)

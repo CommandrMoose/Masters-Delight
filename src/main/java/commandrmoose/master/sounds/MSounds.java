@@ -8,7 +8,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
-import net.tardis.mod.sounds.ISoundScheme;
+import net.tardis.mod.Tardis;
 
 import javax.annotation.CheckForNull;
 import java.util.HashMap;
