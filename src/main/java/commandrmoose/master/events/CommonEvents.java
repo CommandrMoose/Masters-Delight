@@ -2,11 +2,13 @@ package commandrmoose.master.events;
 
 import commandrmoose.master.Master;
 import commandrmoose.master.blocks.MBlocks;
+import commandrmoose.master.client.models.consoles.positionscale.CopperControlPosScale;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import commandrmoose.master.helpers.InteriorUnlocker;
 import commandrmoose.master.helpers.MasterHelper;
 import commandrmoose.master.helpers.NetworkHelper;
 import commandrmoose.master.sounds.MSounds;
+import commandrmoose.master.tiles.console.CopperConsoleTile;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.block.BellBlock;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -75,11 +77,16 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void onWorldTick(TickEvent.WorldTickEvent event) {
-/*
+
         if (event.world.getDimension().getType().getModType() == TDimensions.TARDIS){
 
             TardisHelper.getConsoleInWorld(event.world).ifPresent(tile -> {
                 Random rand = new Random();
+
+                if (tile instanceof CopperConsoleTile) {
+                    CopperControlPosScale.moveControlPositions(tile);
+                }
+
 
                 if (rand.nextInt(5000) <= 1 && tile.isInFlight()) {
                     TemporalBatEntity bat = new TemporalBatEntity(event.world);
@@ -98,17 +105,12 @@ public class CommonEvents {
                     }
                 }
 
-
-            });
-
-            TardisHelper.getConsoleInWorld(event.world).ifPresent(tile -> {
                 if (tile.getDestinationDimension() != null)
                     if (tile.getDestinationDimension() == DimensionType.THE_END){
                         if (tile.isInFlight()){
                             ServerWorld world = tile.getWorld().getServer().func_71218_a(tile.getDestinationDimension());
                             if (world != null){
                                 if (!MasterHelper.hasDragonBeenKilled(world)) {
-                                    Random rand = new Random();
                                     tile.setDestination(DimensionType.OVERWORLD, new BlockPos(-1000 + rand.nextInt(2000), 64, -1000 + rand.nextInt(2000)));
                                     tile.getInteriorManager().setAlarmOn(true);
                                     tile.getWorld().playSound(null, tile.getPos(), MSounds.ALERT_ALARM, SoundCategory.BLOCKS, 0.4f,1f);
@@ -126,12 +128,9 @@ public class CommonEvents {
                             exteriorBlock.getWorld().playSound(null, tile.getExterior().getExterior(tile).getPos(), TSounds.COMMUNICATOR_RING, SoundCategory.BLOCKS, 1f, 1f);
                         }
                     }
-
-
-
                 }
 
-/*                if (tile.getExterior().getExterior(tile).getWorld().getGameTime() % 70 == 0 && !tile.isInFlight())
+/*              if (tile.getExterior().getExterior(tile).getWorld().getGameTime() % 70 == 0 && !tile.isInFlight())
                 {
                     ExteriorTile exteriorBlock = tile.getExterior().getExterior(tile);
                     if (tile != null) {
@@ -139,12 +138,10 @@ public class CommonEvents {
                             exteriorBlock.getWorld().playSound(null, tile.getExterior().getExterior(tile).getPos(), TSounds.SINGLE_CLOISTER, SoundCategory.BLOCKS, 2f, 1f);
                         }
                     }
-
-
-                }
-
+                }*/
             });
-        }*/
+
+        }
     }
 
     @SubscribeEvent

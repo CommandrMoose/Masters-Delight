@@ -40,7 +40,7 @@ public class MConsole implements IRegisterable<Console> {
     }
 
     private static Console register(Console console, String name) {
-        console.setRegistryName(new ResourceLocation(Master.MODID, name));
+        console.setRegistryName(new ResourceLocation(Tardis.MODID, name));
         TardisRegistries.CONSOLE_REGISTRY.register(console.getRegistryName(), console);
         return console;
     }

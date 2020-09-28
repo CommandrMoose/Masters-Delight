@@ -28,7 +28,7 @@ public class MBlocks {
 
 
     // Consoles
-    public static ConsoleBlock console_copper = register(new ConsoleBlock(), "console_copper", null, false);
+    public static MConsoleBlock console_copper = register(new MConsoleBlock(), "console_copper", null, false);
 
     // Tiles
     public static TemporalSiphonBlock temporal_siphon = register(new TemporalSiphonBlock(Block.Properties.create(Material.ANVIL), SoundType.ANVIL, 1.25F, 4.2F), "temporal_siphon");
