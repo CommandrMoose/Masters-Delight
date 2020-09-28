@@ -1,0 +1,26 @@
+{
+  "parent": "tardis:interior/root",
+  "display": {
+    "icon": {
+      "item": "tardis:psychic_cube"
+    },
+    "title": {
+      "translate": "advancements.master.interior.potent"
+    },
+    "description": {
+      "translate": "advancements.master.interior.potent.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "break_book": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "tardis:psychic_cube"
+      }
+    }
+  }
+}

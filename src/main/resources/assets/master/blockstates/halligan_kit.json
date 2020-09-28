@@ -1,34 +1,18 @@
 {
 	"variants":{
-		"facing=north,hanging=true":{
+		"facing=north":{
 			"model": "master:block/halligan_kit",
 			"y": 0
 		},
-		"facing=east,hanging=true":{
+		"facing=east":{
 			"model": "master:block/halligan_kit",
 			"y": 90
 		},
-		"facing=south,hanging=true":{
+		"facing=south":{
 			"model": "master:block/halligan_kit",
 			"y": 180
 		},
-		"facing=west,hanging=true":{
-			"model": "master:block/halligan_kit",
-			"y": 270
-		},
-		"facing=north,hanging=false":{
-			"model": "master:block/halligan_kit",
-			"y": 0
-		},
-		"facing=east,hanging=false":{
-			"model": "master:block/halligan_kit",
-			"y": 90
-		},
-		"facing=south,hanging=false":{
-			"model": "master:block/halligan_kit",
-			"y": 180
-		},
-		"facing=west,hanging=false":{
+		"facing=west":{
 			"model": "master:block/halligan_kit",
 			"y": 270
 		}

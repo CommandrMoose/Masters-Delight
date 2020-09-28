@@ -14,6 +14,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
+import net.tardis.mod.blocks.ConsoleBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,10 @@ public class MBlocks {
 
     public static List<Item> ITEMS = new ArrayList<>();
     public static List<Block> BLOCKS = new ArrayList<>();
+
+
+    // Consoles
+    public static ConsoleBlock console_copper = register(new ConsoleBlock(), "console_copper", null, false);
 
     // Tiles
     public static TemporalSiphonBlock temporal_siphon = register(new TemporalSiphonBlock(Block.Properties.create(Material.ANVIL), SoundType.ANVIL, 1.25F, 4.2F), "temporal_siphon");

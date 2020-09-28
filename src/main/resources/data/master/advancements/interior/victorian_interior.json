@@ -1,0 +1,26 @@
+{
+  "parent": "tardis:interior/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:book"
+    },
+    "title": {
+      "translate": "advancements.master.interior.victorian"
+    },
+    "description": {
+      "translate": "advancements.master.interior.victorian.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "break_book": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "tardis:clutter_books"
+      }
+    }
+  }
+}

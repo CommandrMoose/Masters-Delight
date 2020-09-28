@@ -4,6 +4,7 @@ import com.google.common.base.Supplier;
 import commandrmoose.master.Master;
 import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.blocks.TileBlock;
+import commandrmoose.master.tiles.console.CopperConsoleTile;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -19,6 +20,9 @@ import java.util.List;
 public class MTiles {
 
     public static List<TileEntityType<?>> TYPES = new ArrayList<>();
+
+    public static TileEntityType<CopperConsoleTile> CONSOLE_COPPER = register(CopperConsoleTile::new, "console_copper", MBlocks.console_copper);
+
 
     public static TileEntityType<TemporalSiphonTile> TEMPORAL_SIPHON = register(TemporalSiphonTile::new, "temporal_siphon", MBlocks.temporal_siphon);
     public static TileEntityType<HalliganKitTile> HALLIGAN_KIT = register(HalliganKitTile::new, "halligan_kit", MBlocks.halligan_kit);

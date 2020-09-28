@@ -1,5 +1,21 @@
 {
-  "block.master.temporal_siphon": "Temporal Siphon",
 
-  "tool.temporal_siphon.name": "§7§lStored AU:§6 %s."
+  "itemGroup.master.main": "Master's Delight",
+
+  "block.master.temporal_siphon": "Temporal Siphon",
+  "block.master.halligan_kit": "Halligan Kit",
+
+  "message.halligan_kit_percentage": "Calculating Lock Combination: %s completed.",
+  "message.halligan_kit_no_go": "No TARDIS found.",
+
+
+  "advancements.master.interior.potent": "Doctor in Distress",
+  "advancements.master.interior.potent.desc": "Send a signal with a Psychic Cube.",
+
+  "advancements.master.interior.crystalline": "Better with the Fam.",
+  "advancements.master.interior.crystalline.desc": "Give a cake to someone else.",
+
+  "advancements.master.interior.victorian": "Development Hell",
+  "advancements.master.interior.victorian.desc": "Place a stack of books."
+
 }

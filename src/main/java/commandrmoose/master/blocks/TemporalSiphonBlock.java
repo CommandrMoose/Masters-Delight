@@ -1,5 +1,6 @@
 package commandrmoose.master.blocks;
 
+import commandrmoose.master.itemgroups.MItemGroups;
 import commandrmoose.master.other.IMakeItem;
 import commandrmoose.master.tiles.TemporalSiphonTile;
 import javafx.collections.transformation.TransformationList;
@@ -48,7 +49,7 @@ import java.util.Random;
 
 public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
-    private BlockItem BLOCKITEM = new BlockItem(this, new Item.Properties().group(ItemGroup.REDSTONE).maxDamage(255));
+    private BlockItem BLOCKITEM = new BlockItem(this, new Item.Properties().group(MItemGroups.MAIN).maxDamage(255));
     private boolean isWorking = false;
 
     public TemporalSiphonBlock(Properties prop, SoundType soundType, float hardness, float resistance){
@@ -74,7 +75,7 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
     @Override
     public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
+        return BlockRenderLayer.CUTOUT;
     }
 
     @Override

@@ -1,0 +1,1 @@
+execute as @s run tardis unlock interior master:interior_crystalline
