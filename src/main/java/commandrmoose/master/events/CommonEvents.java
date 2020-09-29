@@ -78,6 +78,7 @@ public class CommonEvents {
 
                 if (tile instanceof CopperConsoleTile) {
                     CopperControlPosScale.moveControlPositions(tile);
+                    tile.updateClient();
                 }
 
 
@@ -139,6 +140,10 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void onEntityJoin(EntityJoinWorldEvent event){
+
+        if (event.getEntity() instanceof ControlEntity) {
+            System.out.println("Spawned control:" + event.getEntity().getDisplayName().getFormattedText());
+        }
 
         if(event.getWorld().getDimension().getType().getModType() == TDimensions.VORTEX) {
             if (event.getEntity() instanceof ServerPlayerEntity) {

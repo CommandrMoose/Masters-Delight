@@ -13,15 +13,12 @@ public class CopperControlPosScale extends ConsoleControlTransform {
 
     public static void moveControlPositions(TileEntity tile)
     {
-        if (tile != null && tile instanceof CopperConsoleTile)
+        if (tile != null)
         {
             ConsoleTile consoleTile = (ConsoleTile) tile;
             for (ControlEntity control : consoleTile.getControlList())
             {
                 setControlPos(consoleTile, control, new Vec3d(0,1,0));
-
-                if (control.getControl() instanceof CommunicatorControl) {
-                }
             }
 
         }

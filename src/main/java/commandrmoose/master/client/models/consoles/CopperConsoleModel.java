@@ -1681,8 +1681,8 @@ public class CopperConsoleModel extends Model {
 		GlStateManager.translated(-0.12, 0.555, -0.68);
 		GlStateManager.rotated(0, 1, 0, 0);
 		
-		WorldText text = new WorldText(0.22F, 0.15F, 0.002F, 0xFFFFFF);
-		text.renderMonitor(Helper.getConsoleText(tile));
+		//WorldText text = new WorldText(0.22F, 0.15F, 0.002F, 0xFFFFFF);
+		//text.renderMonitor(Helper.getConsoleText(tile));
 		GlStateManager.popMatrix();
 	}
 
