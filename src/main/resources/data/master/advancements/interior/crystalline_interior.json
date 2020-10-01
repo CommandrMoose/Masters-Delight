@@ -2,13 +2,13 @@
   "parent": "tardis:interior/root",
   "display": {
     "icon": {
-      "item": "minecraft:cake"
+      "item": "minecraft:clock"
     },
     "title": {
       "translate": "advancements.master.interior.crystalline"
     },
     "description": {
-      "translate": "dvancements.master.interior.crystalline.desc"
+      "translate": "advancements.master.interior.crystalline.desc"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,16 +16,20 @@
     "hidden": false
   },
   "criteria": {
-    "consumecookie": {
-      "trigger": "minecraft:thrown_item_picked_up_by_entity",
+    "has_clock": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "entity": {
-          "type": "minecraft:player"
-        },
-        "item": {
-          "item": "minecraft:cake"
-        }
+        "items": [
+          {
+            "item": "minecraft:clock"
+          }
+        ]
       }
     }
-  }
+  },
+  "requirements": [
+    [
+      "has_clock"
+    ]
+  ]
 }

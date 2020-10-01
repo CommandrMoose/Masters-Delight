@@ -16,7 +16,7 @@
     "namespaced_id": "master:interior_thermador",
     "display_name": "Thermador Interior",
     "image_resource_location": "master:textures/gui/interiors/thermador_preview.png",
-    "unlocked_by_default": false,
+    "unlocked_by_default": true,
 	"using_remote_image" : false,
     "remote_image" : "https://i.imgur.com/lTv8YEm.png",
     "x_offset": 22,

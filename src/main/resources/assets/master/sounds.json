@@ -9,6 +9,16 @@
       }
     ]
   },
+  "bell_ring": {
+    "category": "block",
+    "subtitle": "master.subtitle.bell_ring",
+    "sounds": [
+      {
+        "name": "master:tardis/bell_ring",
+        "stream": true
+      }
+    ]
+  },
 
   "time_vortex": {
     "category": "music",

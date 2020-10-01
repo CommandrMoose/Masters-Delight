@@ -1,0 +1,38 @@
+{
+  "parent": "tardis:interior/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:pufferfish"
+    },
+    "title": {
+      "translate": "advancements.master.interior.aquarious"
+    },
+    "description": {
+      "translate": "advancements.master.interior.aquarious.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shot_arrow": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "type": {
+            "is_projectile": true,
+            "direct_entity": {
+              "type": "minecraft:arrow"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "shot_arrow"
+    ]
+  ]
+}
