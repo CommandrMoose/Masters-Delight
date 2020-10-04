@@ -7,6 +7,7 @@ import commandrmoose.master.consoles.positionscale.CopperControlPosScale;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import commandrmoose.master.helpers.InteriorUnlocker;
 import commandrmoose.master.helpers.MasterHelper;
+import commandrmoose.master.helpers.NetworkHelper;
 import commandrmoose.master.sounds.MSounds;
 import commandrmoose.master.tiles.console.CopperConsoleTile;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -33,6 +34,7 @@ import net.tardis.mod.dimensions.TDimensions;
 import net.tardis.mod.entity.ControlEntity;
 import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.enums.EnumDoorState;
+import net.tardis.mod.events.TardisEvent;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.ArtronCapacitorItem;
 import net.tardis.mod.items.SonicItem;
@@ -265,20 +267,26 @@ public class CommonEvents {
 
                 ExteriorTile exteriorBlock = tile.getExterior().getExterior(tile);
                 if (exteriorBlock != null) {
-                    if (!tile.getDistressSignals().isEmpty() && tile.getExterior().getExterior(tile).getWorld().getGameTime() % 100 == 0 && !tile.isInFlight())
-                    {
-                        if ( exteriorBlock instanceof ModernPoliceBoxExteriorTile || exteriorBlock instanceof PoliceBoxExteriorTile || exteriorBlock instanceof RedExteriorTile) {
+                    if (!tile.getDistressSignals().isEmpty() && tile.getExterior().getExterior(tile).getWorld().getGameTime() % 100 == 0 && !tile.isInFlight()) {
+                        if (exteriorBlock instanceof ModernPoliceBoxExteriorTile || exteriorBlock instanceof PoliceBoxExteriorTile || exteriorBlock instanceof RedExteriorTile) {
                             exteriorBlock.getWorld().playSound(null, tile.getExterior().getExterior(tile).getPos(), TSounds.COMMUNICATOR_RING, SoundCategory.BLOCKS, 1f, 1f);
                         }
                     }
 
-                    if (tile.getExterior().getExterior(tile).getWorld().getGameTime() % 70 == 0 && !tile.isInFlight())
-                    {
+                    if (tile.getExterior().getExterior(tile).getWorld().getGameTime() % 70 == 0 && !tile.isInFlight()) {
                         if (tile.getInteriorManager().isAlarmOn()) {
                             exteriorBlock.getWorld().playSound(null, tile.getExterior().getExterior(tile).getPos(), TSounds.SINGLE_CLOISTER, SoundCategory.BLOCKS, 2f, 1f);
                         }
                     }
                 }
+
+              /*  if (tile.isInFlight()) {
+                    double scale = tile.flightTicks / tile.getReachDestinationTick();
+                    if (scale < 0.99 && tile.getWorld().getGameTime() % 60 == 0) {
+                        NetworkHelper.sendMessage("1");
+                    }
+                }*/
+
             });
 
         }

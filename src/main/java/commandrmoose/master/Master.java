@@ -4,6 +4,7 @@ import commandrmoose.master.data.LootTableCreation;
 import commandrmoose.master.proxy.ClientProxy;
 import commandrmoose.master.proxy.IProxy;
 import commandrmoose.master.proxy.ServerProxy;
+import commandrmoose.master.recipe.MQuantiscopeRecipies;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -32,8 +33,13 @@ public class Master {
 
     public Master() {
 
+        FMLJavaModLoadingContext.get().getModEventBus().register(this);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
+        MQuantiscopeRecipies.addRecipies();
+
+
     }
 
     private void commonSetup(FMLCommonSetupEvent event){
@@ -53,5 +59,9 @@ public class Master {
         e.getGenerator().addProvider(new LootTableCreation(e.getGenerator()));
     }
 
+    private void setup(final FMLCommonSetupEvent event) {
+        MQuantiscopeRecipies.addRecipies();
+        
+    }
 
 }
