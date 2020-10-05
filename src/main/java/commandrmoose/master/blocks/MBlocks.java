@@ -1,6 +1,7 @@
 package commandrmoose.master.blocks;
 
 import commandrmoose.master.Master;
+import commandrmoose.master.blocks.exteriors.BoothExteriorBlock;
 import commandrmoose.master.items.MItemProperties;
 import commandrmoose.master.other.IMakeItem;
 import net.minecraft.block.Block;
@@ -15,6 +16,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 import net.tardis.mod.blocks.ConsoleBlock;
+import net.tardis.mod.blocks.ExteriorBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,8 @@ public class MBlocks {
     public static TemporalSiphonBlock temporal_siphon = register(new TemporalSiphonBlock(Block.Properties.create(Material.ANVIL), SoundType.ANVIL, 1.25F, 4.2F), "temporal_siphon");
     public static HalliganKitBlock halligan_kit = register(new HalliganKitBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 1.25f, 6f), "halligan_kit");
 
+    // Exteriors
+    public static ExteriorBlock exterior_booth = register(new ExteriorBlock(), "exterior_booth");
 
     // Electricity
     public static ElectricBarBlock electric_bars = register(new ElectricBarBlock(Block.Properties.create(Material.IRON)), "electric_bars");

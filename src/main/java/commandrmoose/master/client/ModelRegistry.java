@@ -1,12 +1,17 @@
 package commandrmoose.master.client;
 
 import commandrmoose.master.Master;
+import commandrmoose.master.blocks.exteriors.BoothExteriorBlock;
 import commandrmoose.master.client.renderers.consoles.CopperConsoleRenderer;
+import commandrmoose.master.client.renderers.entity.adventure.WatcherRenderer;
 import commandrmoose.master.client.renderers.entity.passive.TemporalBatRenderer;
+import commandrmoose.master.client.renderers.exterior.BoothExteriorRenderer;
 import commandrmoose.master.client.renderers.tile.TemporalSiphonRenderer;
+import commandrmoose.master.entity.adventure.WatcherEntity;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import commandrmoose.master.tiles.TemporalSiphonTile;
 import commandrmoose.master.tiles.console.CopperConsoleTile;
+import commandrmoose.master.tiles.exterior.BoothExteriorTile;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -22,7 +27,10 @@ public class ModelRegistry {
     @SubscribeEvent
     public static void register(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(TemporalBatEntity.class, TemporalBatRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(WatcherEntity.class, WatcherRenderer::new);
 
+
+        ClientRegistry.bindTileEntitySpecialRenderer(BoothExteriorTile.class, new BoothExteriorRenderer());
 
         ClientRegistry.bindTileEntitySpecialRenderer(CopperConsoleTile.class, new CopperConsoleRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(TemporalSiphonTile.class, new TemporalSiphonRenderer());

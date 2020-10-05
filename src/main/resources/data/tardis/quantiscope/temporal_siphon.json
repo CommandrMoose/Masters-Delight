@@ -1,0 +1,10 @@
+{
+	"repair": "false",
+	"ingredients": [
+		"tardis:xion_crystal",
+		"minecraft:stone"
+	],
+	"result": {
+		"item": "master:temporal_siphon"
+	}
+}

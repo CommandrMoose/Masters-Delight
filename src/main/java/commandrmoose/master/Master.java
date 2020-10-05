@@ -1,5 +1,6 @@
 package commandrmoose.master;
 
+import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.data.LootTableCreation;
 import commandrmoose.master.proxy.ClientProxy;
 import commandrmoose.master.proxy.IProxy;
@@ -7,6 +8,8 @@ import commandrmoose.master.proxy.ServerProxy;
 import commandrmoose.master.recipe.MQuantiscopeRecipies;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,6 +20,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.tardis.mod.items.TItems;
+import net.tardis.mod.recipe.WeldRecipe;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,11 +39,8 @@ public class Master {
     public Master() {
 
         FMLJavaModLoadingContext.get().getModEventBus().register(this);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
-        MQuantiscopeRecipies.addRecipies();
-
 
     }
 
@@ -59,9 +61,5 @@ public class Master {
         e.getGenerator().addProvider(new LootTableCreation(e.getGenerator()));
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
-        MQuantiscopeRecipies.addRecipies();
-        
-    }
 
 }

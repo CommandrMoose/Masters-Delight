@@ -62,7 +62,7 @@ public class CommonEvents {
     @SubscribeEvent
     public static void syncDataPacks(PlayerEvent.PlayerLoggedInEvent event) {
         if(event.getPlayer() instanceof ServerPlayerEntity) {
-            Network.sendTo(new RecipeSyncMessage(new ArrayList<>(WeldRecipe.WELD_RECIPE), Maps.newHashMap()), (ServerPlayerEntity)event.getPlayer());
+            //Network.sendTo(new RecipeSyncMessage(new ArrayList<>(WeldRecipe.WELD_RECIPE), Maps.newHashMap()), (ServerPlayerEntity)event.getPlayer());
         }
     }
 
@@ -85,6 +85,12 @@ public class CommonEvents {
                 }
             }
         }
+    }
+
+
+    @SubscribeEvent
+    public static void onWorldJoin(PlayerEvent.PlayerLoggedInEvent event) {
+        WeldRecipe.WELD_RECIPE.forEach(item -> System.out.println(item.getOutput()));
     }
 
     @SubscribeEvent

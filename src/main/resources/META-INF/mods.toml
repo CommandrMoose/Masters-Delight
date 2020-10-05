@@ -1,6 +1,6 @@
 modLoader="javafml" #mandatory
 loaderVersion="[28,)" #mandatory
-issueTrackerURL="https://gitlab.com/Spectre0987/TardisMod-1-14/issues" #optional
+issueTrackerURL="https://github.com/CommandrMoose/Masters-Delight/issues" #optional
 
 [[mods]] #mandatory
 modId="master" #mandatory
@@ -19,5 +19,5 @@ The Master's Delight is an addon mod for the New TARDIS Mod.'''
     modId="tardis"
     mandatory=true
     versionRange="[1.4,)"
-    ordering="NONE"
+    ordering="AFTER"
     side="BOTH"

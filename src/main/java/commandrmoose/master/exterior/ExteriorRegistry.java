@@ -1,6 +1,7 @@
 package commandrmoose.master.exterior;
 
 import commandrmoose.master.Master;
+import commandrmoose.master.blocks.MBlocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,7 +21,7 @@ public class ExteriorRegistry {
 
     private static HashMap<ResourceLocation, IExterior> REGISTRY = new HashMap<>();
 
-    public static TwoBlockBasicExterior TEST;
+    public static TwoBlockBasicExterior BOOTH;
 
 
     // Registers all the exteriors.
@@ -44,7 +45,7 @@ public class ExteriorRegistry {
 
     @SubscribeEvent
     public static void registerExteriors(FMLCommonSetupEvent event) {
-        TEST = register(new ResourceLocation(Master.MODID, "test"), new TwoBlockBasicExterior(() -> TBlocks.exterior_steampunk.getDefaultState(), true, IDoorType.EnumDoorType.STEAM, new ResourceLocation(Tardis.MODID, "textures/gui/exteriors/steam.png"), TextureVariants.STEAM));
+        BOOTH = register(new ResourceLocation(Master.MODID, "booth"), new TwoBlockBasicExterior(() -> MBlocks.exterior_booth.getDefaultState(), true, IDoorType.EnumDoorType.TT_CAPSULE, new ResourceLocation(Master.MODID, "textures/gui/exteriors/woah.png")));
     }
 
 }

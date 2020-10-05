@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
 import net.minecraft.entity.Entity;
+import net.minecraft.tileentity.TileEntity;
 
 public class TemporalSiphonModel extends Model {
 	private final RendererModel bone;
@@ -197,7 +198,7 @@ public class TemporalSiphonModel extends Model {
 	}
 
 
-	public void render(TemporalSiphonTile tile) {
+	public void render(TileEntity tile) {
 		//bone.render(0.0625F);
 		bone2.render(0.0625F);
 		bone3.render(0.0625F);
