@@ -2,6 +2,7 @@ package commandrmoose.master.client.renderers.tile;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import commandrmoose.master.Master;
+import commandrmoose.master.client.models.exteriors.BoothExteriorModel;
 import commandrmoose.master.client.models.tile.TemporalSiphonModel;
 import commandrmoose.master.tiles.TemporalSiphonTile;
 import net.minecraft.client.Minecraft;

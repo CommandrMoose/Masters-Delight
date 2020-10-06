@@ -37,7 +37,7 @@ public class MBlocks {
     public static HalliganKitBlock halligan_kit = register(new HalliganKitBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 1.25f, 6f), "halligan_kit");
 
     // Exteriors
-    public static ExteriorBlock exterior_booth = register(new ExteriorBlock(), "exterior_booth");
+    public static BoothExteriorBlock exterior_booth = register(new BoothExteriorBlock(), "exterior_booth");
 
     // Electricity
     public static ElectricBarBlock electric_bars = register(new ElectricBarBlock(Block.Properties.create(Material.IRON)), "electric_bars");

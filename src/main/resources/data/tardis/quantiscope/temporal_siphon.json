@@ -1,8 +1,11 @@
 {
 	"repair": "false",
 	"ingredients": [
-		"tardis:xion_crystal",
-		"minecraft:stone"
+		"minecraft:hopper",
+		"minecraft:redstone_torch",
+		"tardis:circuits",
+		"tardis:artron_capacitor_high",
+		"tardis:circuits"
 	],
 	"result": {
 		"item": "master:temporal_siphon"

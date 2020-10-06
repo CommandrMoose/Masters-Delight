@@ -1,0 +1,13 @@
+{
+	"repair": "false",
+	"ingredients": [
+		"minecraft:nether_star",
+		"tardis:diagnostic_tool",
+		"master:temporal_siphon",
+		"tardis:artron_capacitor_high",
+		"tardis:sonic"
+	],
+	"result": {
+		"item": "master:halligan_kit"
+	}
+}

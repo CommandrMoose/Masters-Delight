@@ -3,14 +3,15 @@ package commandrmoose.master.client.models.exteriors;// Made with Blockbench 3.6
 // Paste this class into your mod and generate all required imports
 
 
-import commandrmoose.master.tiles.exterior.BoothExteriorTile;
-import net.minecraft.client.renderer.entity.model.EntityModel;
+import commandrmoose.master.tiles.TemporalSiphonTile;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
-import net.tardis.mod.client.models.exteriors.ExteriorModel;
+import net.minecraft.tileentity.TileEntity;
+import net.tardis.mod.client.models.IExteriorModel;
+import net.tardis.mod.entity.TardisEntity;
 
-public abstract class BoothExteriorModel extends ExteriorModel {
+public class BoothExteriorModel extends Model implements IExteriorModel {
 	private final RendererModel Base;
 	private final RendererModel Pillars;
 	private final RendererModel Sides;
@@ -162,7 +163,7 @@ public abstract class BoothExteriorModel extends ExteriorModel {
 		PhoneCord.cubeList.add(new ModelBox(PhoneCord, 197, 93, 4.0F, -35.0F, 7.5F, 4, 11, 0, 0.0F, false));
 	}
 
-	public void render(BoothExteriorTile entity) {
+	public void render(TileEntity tile) {
 		Base.render(0.0625F);
 		Pillars.render(0.0625F);
 		Sides.render(0.0625F);
@@ -174,11 +175,31 @@ public abstract class BoothExteriorModel extends ExteriorModel {
 		InsideLight.render(0.0625F);
 		PhoneBook.render(0.0625F);
 		PhoneCord.render(0.0625F);
+
+		System.out.println("Rendering");
 	}
+
 
 	public void setRotationAngle(RendererModel modelRenderer, float x, float y, float z) {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+	}
+
+	@Override
+	public void renderEntity(TardisEntity tardisEntity) {
+		Base.render(0.0625F);
+		Pillars.render(0.0625F);
+		Sides.render(0.0625F);
+		Phone.render(0.0625F);
+		PhoneSign.render(0.0625F);
+		Roof.render(0.0625F);
+		Doors.render(0.0625F);
+		Antena.render(0.0625F);
+		InsideLight.render(0.0625F);
+		PhoneBook.render(0.0625F);
+		PhoneCord.render(0.0625F);
+
+		System.out.println("Rendering");
 	}
 }

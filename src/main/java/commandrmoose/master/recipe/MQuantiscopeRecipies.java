@@ -18,7 +18,8 @@ public class MQuantiscopeRecipies {
 
     @SubscribeEvent
     public static void register(FMLCommonSetupEvent event){
-        //WeldRecipe.WELD_RECIPE.add(new WeldRecipe(Item.getItemFromBlock(MBlocks.temporal_siphon), false, Items.ACACIA_LEAVES));
+        WeldRecipe.WELD_RECIPE.add(new WeldRecipe(Item.getItemFromBlock(MBlocks.temporal_siphon), false, Items.ACACIA_LEAVES));
+        WeldRecipe.WELD_RECIPE.add(new WeldRecipe(Item.getItemFromBlock(MBlocks.halligan_kit), false, Items.STONE));
     }
 
 }

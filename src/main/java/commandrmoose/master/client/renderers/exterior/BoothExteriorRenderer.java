@@ -12,20 +12,24 @@ import net.minecraft.util.ResourceLocation;
 import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 
 
-public class BoothExteriorRenderer extends ExteriorRenderer<BoothExteriorTile> {
+public class BoothExteriorRenderer extends TileEntityRenderer<BoothExteriorTile> {
 
     public static final BoothExteriorModel model = new BoothExteriorModel();
 
     public static final ResourceLocation TEXTURE = new ResourceLocation(Master.MODID, "textures/exteriors/booth.png");
 
     @Override
-    public void renderExterior(BoothExteriorTile boothExteriorTile) {
+    public void render(BoothExteriorTile tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
+        System.out.println("AHHHH");
         GlStateManager.pushMatrix();
-        GlStateManager.rotated(180,0,0,1);
+        GlStateManager.translated(x + 0.5, y + 1.8, z + 0.5);
+        GlStateManager.scaled(1.2, 1.2, 1.2);
+        GlStateManager.rotated(180, 0, 0, 1);
         this.bindTexture(TEXTURE);
-        model.render(boothExteriorTile);
+        model.render(tileEntityIn);
         GlStateManager.popMatrix();
     }
+
 
 
     @Override
