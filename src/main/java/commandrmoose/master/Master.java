@@ -2,6 +2,7 @@ package commandrmoose.master;
 
 import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.data.LootTableCreation;
+import commandrmoose.master.exterior.MasterExteriors;
 import commandrmoose.master.proxy.ClientProxy;
 import commandrmoose.master.proxy.IProxy;
 import commandrmoose.master.proxy.ServerProxy;
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.tardis.mod.exterior.ExteriorRegistry;
 import net.tardis.mod.items.TItems;
 import net.tardis.mod.recipe.WeldRecipe;
 import org.apache.logging.log4j.LogManager;
@@ -45,15 +47,12 @@ public class Master {
     }
 
     private void commonSetup(FMLCommonSetupEvent event){
-
         DistExecutor.runWhenOn(Dist.DEDICATED_SERVER, () -> {
-
             return () -> proxy = new ServerProxy();
-
         });
 
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> proxy = new ClientProxy());
-
+        MasterExteriors.init();
     }
 
     @SubscribeEvent

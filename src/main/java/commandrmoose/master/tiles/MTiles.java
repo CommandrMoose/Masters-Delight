@@ -26,7 +26,7 @@ public class MTiles {
 
     public static TileEntityType<CopperConsoleTile> CONSOLE_COPPER = register(CopperConsoleTile::new, "console_copper", MBlocks.console_copper);
 
-    public static TileEntityType<ExteriorTile> EXTERIOR_BOOTH = register(BoothExteriorTile::new, "exterior_booth", MBlocks.exterior_booth);
+    public static TileEntityType<BoothExteriorTile> EXTERIOR_BOOTH = register(BoothExteriorTile::new, "exterior_booth", MBlocks.exterior_booth);
 
 
     public static TileEntityType<TemporalSiphonTile> TEMPORAL_SIPHON = register(TemporalSiphonTile::new, "temporal_siphon", MBlocks.temporal_siphon);
