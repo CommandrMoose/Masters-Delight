@@ -102,6 +102,7 @@ public class BoothExteriorModel extends Model implements IExteriorModel {
         Roof.cubeList.add(new ModelBox(Roof, 18, 4, 10.0F, -60.0F, -11.0F, 1, 3, 1, 0.0F, false));
         Roof.cubeList.add(new ModelBox(Roof, 0, 28, -12.0F, -62.0F, -12.0F, 24, 2, 24, 0.0F, false));
         Roof.cubeList.add(new ModelBox(Roof, 69, 54, -11.0F, -63.0F, -11.0F, 22, 1, 22, 0.0F, false));
+        Roof.cubeList.add(new ModelBox(Roof, 5, 56, -10.5F, -57.0F, -10.5F, 21, 1, 21, 0.0F, false));
 
         Doors = new RendererModel(this);
         Doors.setRotationPoint(11.0F, 20.0F, -11.0F);
@@ -121,8 +122,8 @@ public class BoothExteriorModel extends Model implements IExteriorModel {
         door_left.cubeList.add(new ModelBox(door_left, 72, 34, -8.5F, -1.0F, -1.5F, 9, 1, 1, 0.0F, false));
 
         door_right = new RendererModel(this);
-        door_right.setRotationPoint(-11.0F, 0.0F, 1.0F);
-        Doors.addChild(door_right);
+        door_right.setRotationPoint(-9.5F, 0.0F, -0.5F);
+        door_left.addChild(door_right);
         door_right.cubeList.add(new ModelBox(door_right, 6, 106, -11.0F, -52.0F, -1.0F, 1, 52, 1, 0.0F, false));
         door_right.cubeList.add(new ModelBox(door_right, 72, 32, -10.0F, -1.0F, -1.0F, 9, 1, 1, 0.0F, false));
         door_right.cubeList.add(new ModelBox(door_right, 10, 106, -1.0F, -52.0F, -1.0F, 1, 52, 1, 0.0F, false));
@@ -150,7 +151,7 @@ public class BoothExteriorModel extends Model implements IExteriorModel {
 
         InsideLight = new RendererModel(this);
         InsideLight.setRotationPoint(2.5F, 24.0F, -0.5F);
-        InsideLight.cubeList.add(new ModelBox(InsideLight, 0, 168, -9.0F, -57.0F, -6.0F, 13, 1, 13, 0.0F, false));
+        InsideLight.cubeList.add(new ModelBox(InsideLight, 0, 168, -9.0F, -56.0F, -6.0F, 13, 1, 13, 0.0F, false));
 
         PhoneBook = new RendererModel(this);
         PhoneBook.setRotationPoint(6.0F, 20.0F, 5.0F);
@@ -170,24 +171,23 @@ public class BoothExteriorModel extends Model implements IExteriorModel {
         PhoneSign.render(0.0625F);
         Roof.render(0.0625F);
 
-        float doorAngle = 0;
 
-        //TODO Hi Moose, yeah I know this isn't how the doors open
-        //Do I care? no :)
         switch (tile.getOpen()) {
             case ONE:
-                doorAngle = (float) Math.toRadians(-40);
+                door_left.rotateAngleY = (float) Math.toRadians(-60);
+                door_right.rotateAngleY = (float) Math.toRadians(120);
                 break;
             case BOTH:
-                doorAngle = (float) Math.toRadians(-90);
+                door_left.rotateAngleY = (float) Math.toRadians(-80);
+                door_right.rotateAngleY = (float) Math.toRadians(160);
                 break;
             case CLOSED:
-                doorAngle = (float) Math.toRadians(0);
+                door_left.rotateAngleY = (float) Math.toDegrees(0);
+                door_right.rotateAngleY = (float) Math.toDegrees(0);
                 break;
         }
 
         Doors.render(0.0625F);
-        Doors.rotateAngleY = doorAngle;
         Antena.render(0.0625F);
         InsideLight.render(0.0625F);
         PhoneBook.render(0.0625F);

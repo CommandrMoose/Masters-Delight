@@ -23,7 +23,8 @@ public class BoothExteriorRenderer extends ExteriorRenderer<BoothExteriorTile>{
     @Override
     public void renderExterior(BoothExteriorTile boothExteriorTile) {
         GlStateManager.pushMatrix();
-        GlStateManager.translated(0,-1,0);
+        GlStateManager.translated(0,-0.5f,0);
+        GlStateManager.scaled(0.7f, 0.7f, 0.7f);
         this.bindTexture(TEXTURE);
         model.render(boothExteriorTile);
         GlStateManager.popMatrix();
