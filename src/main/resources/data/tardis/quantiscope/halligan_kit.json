@@ -1,7 +1,7 @@
 {
 	"repair": "false",
 	"ingredients": [
-		"minecraft:nether_star",
+		"minecraft:emerald",
 		"tardis:diagnostic_tool",
 		"master:temporal_siphon",
 		"tardis:artron_capacitor_high",

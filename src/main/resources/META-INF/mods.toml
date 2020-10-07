@@ -4,12 +4,12 @@ issueTrackerURL="https://github.com/CommandrMoose/Masters-Delight/issues" #optio
 
 [[mods]] #mandatory
 modId="master" #mandatory
-version="0.0.1" #mandatory
+version="0.1A" #mandatory
 displayName="The Master's Delight" #mandatory
-#updateJSONURL="http://myurl.me/" #optional
-displayURL="https://tardis-mod.com/" #optional
+#updateJSONURL="/" #optional
+displayURL="" #optional
 logoFile="logo.png" #optional
-credits="CommandrMoose" #optional
+credits="CommandrMoose, _ILikePandas_, Jaycoby" #optional
 authors="CommandrMoose" #optional
 description='''
 The Master's Delight is an addon mod for the New TARDIS Mod.'''

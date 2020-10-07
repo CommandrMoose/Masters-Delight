@@ -28,7 +28,7 @@ public class WatcherRenderer extends BipedRenderer<WatcherEntity, PlayerModel<Wa
     public void doRender(WatcherEntity entity, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
-        GlStateManager.color4f(0.7F, 0.7F, 1F, 0.75F);
+        GlStateManager.color4f(1F, 1F, 1F, entity.getView());
         super.doRender(entity,x,y,z,entityYaw,partialTicks);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

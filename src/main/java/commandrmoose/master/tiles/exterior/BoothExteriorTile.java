@@ -22,9 +22,9 @@ public class BoothExteriorTile extends ExteriorTile{
         super(tileEntityTypeIn);
     }
 
-    public BoothExteriorTile() {
+    /*public BoothExteriorTile() {
         super(MTiles.EXTERIOR_BOOTH);
-    }
+    }*/
 
 
     public void tick() {

@@ -9,7 +9,6 @@ import commandrmoose.master.helpers.InteriorUnlocker;
 import commandrmoose.master.helpers.MasterHelper;
 import commandrmoose.master.helpers.NetworkHelper;
 import commandrmoose.master.sounds.MSounds;
-import commandrmoose.master.tiles.console.CopperConsoleTile;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.FishingRodItem;
 import net.minecraft.item.Item;
@@ -103,6 +102,30 @@ public class CommonEvents {
 
                 event.world.getCapability(Capabilities.TARDIS_DATA).ifPresent(cap -> {
                     PanelInventory panel = cap.getEngineInventoryForSide(Direction.EAST);
+                    PanelInventory comp = cap.getEngineInventoryForSide(Direction.NORTH);
+
+                    if (comp != null) {
+
+                        boolean isPresent = false;
+
+                        for(int i = 0; i < comp.getSizeInventory(); ++i) {
+                            ItemStack stack = comp.getStackInSlot(i);
+                            if (stack.getItem() == TItems.SHEILD_GENERATOR) {
+                                isPresent = true;
+                            }
+
+                        }
+
+                        if (isPresent != true) {
+                            if (rand.nextInt(5000) <= 1 && tile.isInFlight()) {
+                                TemporalBatEntity bat = new TemporalBatEntity(event.world);
+                                bat.setPosition(tile.getPos().getX() + 0.5f, tile.getPos().getY() + 1, tile.getPos().getZ() + 0.5f);
+                                event.world.addEntity(bat);
+                            }
+                        }
+
+                    }
+
                     if (panel != null) {
                         for(int i = 0; i < panel.getSizeInventory(); ++i) {
                             ItemStack stack = panel.getStackInSlot(i);
@@ -238,13 +261,6 @@ public class CommonEvents {
 
                 });
 
-
-
-                if (rand.nextInt(5000) <= 1 && tile.isInFlight()) {
-                    TemporalBatEntity bat = new TemporalBatEntity(event.world);
-                    bat.setPosition(tile.getPos().getX() + 0.5f, tile.getPos().getY() + 1, tile.getPos().getZ() + 0.5f);
-                    event.world.addEntity(bat);
-                }
 
                 if (tile.getSonicItem().getItem() != null) {
                     if (tile.getSonicItem().getItem() == TItems.SONIC) {

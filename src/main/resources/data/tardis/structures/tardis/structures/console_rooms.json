@@ -44,8 +44,8 @@
 	"using_remote_image" : false,
     "remote_image" : "https://i.imgur.com/lTv8YEm.png",
     "x_offset": 29,
-	"y_offset": 2,
-	"z_offset": 30
+    "y_offset": 3,
+    "z_offset": 30
   },
   {
     "schematic_resource_location": "master:tardis/structures/mesh_int",

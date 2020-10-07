@@ -54,6 +54,8 @@ public class Master {
 
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> proxy = new ClientProxy());
 
+        MQuantiscopeRecipies.register(event);
+
     }
 
     @SubscribeEvent
