@@ -9,27 +9,25 @@ import commandrmoose.master.tiles.exterior.BoothExteriorTile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.tardis.mod.client.renderers.exteriors.ClockExteriorRenderer;
 import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
+import net.tardis.mod.tileentities.exteriors.ClockExteriorTile;
 
 
-public class BoothExteriorRenderer extends TileEntityRenderer<BoothExteriorTile> {
+public class BoothExteriorRenderer extends ExteriorRenderer<BoothExteriorTile>{
 
     public static final BoothExteriorModel model = new BoothExteriorModel();
 
     public static final ResourceLocation TEXTURE = new ResourceLocation(Master.MODID, "textures/exteriors/booth.png");
 
     @Override
-    public void render(BoothExteriorTile tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
-        System.out.println("AHHHH");
+    public void renderExterior(BoothExteriorTile boothExteriorTile) {
         GlStateManager.pushMatrix();
-        GlStateManager.translated(x + 0.5, y + 1.8, z + 0.5);
-        GlStateManager.scaled(1.2, 1.2, 1.2);
-        GlStateManager.rotated(180, 0, 0, 1);
+        GlStateManager.translated(0,-1,0);
         this.bindTexture(TEXTURE);
-        model.render(tileEntityIn);
+        model.render(boothExteriorTile);
         GlStateManager.popMatrix();
     }
-
 
 
     @Override

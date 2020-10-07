@@ -5,6 +5,7 @@ import commandrmoose.master.Master;
 import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.blocks.TileBlock;
 import commandrmoose.master.blocks.exteriors.BoothExteriorBlock;
+import commandrmoose.master.tiles.console.CopperConsoleTile;
 import commandrmoose.master.tiles.exterior.BoothExteriorTile;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -23,9 +24,9 @@ public class MTiles {
 
     public static List<TileEntityType<?>> TYPES = new ArrayList<>();
 
-    //public static TileEntityType<CopperConsoleTile> CONSOLE_COPPER = register(CopperConsoleTile::new, "console_copper", MBlocks.console_copper);
+    public static TileEntityType<CopperConsoleTile> CONSOLE_COPPER = register(CopperConsoleTile::new, "console_copper", MBlocks.console_copper);
 
-    //public static TileEntityType<ExteriorTile> EXTERIOR_BOOTH = register(BoothExteriorTile::new, "exterior_booth", MBlocks.exterior_booth);
+    public static TileEntityType<BoothExteriorTile> EXTERIOR_BOOTH = register(BoothExteriorTile::new, "exterior_booth", MBlocks.exterior_booth);
 
 
     public static TileEntityType<TemporalSiphonTile> TEMPORAL_SIPHON = register(TemporalSiphonTile::new, "temporal_siphon", MBlocks.temporal_siphon);

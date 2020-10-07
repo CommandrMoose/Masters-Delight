@@ -3,48 +3,30 @@ package commandrmoose.master.blocks;
 import commandrmoose.master.itemgroups.MItemGroups;
 import commandrmoose.master.other.IMakeItem;
 import commandrmoose.master.tiles.TemporalSiphonTile;
-import javafx.collections.transformation.TransformationList;
-import net.minecraft.block.*;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.command.arguments.NBTCompoundTagArgument;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.SoundType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.tileentity.ShulkerBoxTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ColorHandlerEvent;
-import net.minecraftforge.common.UsernameCache;
-import net.minecraftforge.items.IItemHandler;
-import net.tardis.mod.Tardis;
 import net.tardis.mod.blocks.TBlocks;
-import net.tardis.mod.helper.Helper;
-import net.tardis.mod.helper.PlayerHelper;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.items.TItems;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
 
-import javax.annotation.Nullable;
-import java.util.List;
 import java.util.Random;
 
 public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
@@ -52,8 +34,8 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
     private BlockItem BLOCKITEM = new BlockItem(this, new Item.Properties().group(MItemGroups.MAIN).maxDamage(255));
     private boolean isWorking = false;
 
-    public TemporalSiphonBlock(Properties prop, SoundType soundType, float hardness, float resistance){
-        super(prop.sound(soundType).hardnessAndResistance(hardness,resistance));
+    public TemporalSiphonBlock(Properties prop, SoundType soundType, float hardness, float resistance) {
+        super(prop.sound(soundType).hardnessAndResistance(hardness, resistance));
     }
 
     public TemporalSiphonBlock(Properties prop) {
@@ -61,7 +43,9 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
     }
 
     @Override
-    public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {return 7;}
+    public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return 7;
+    }
 
     @Override
     public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
@@ -90,10 +74,10 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
 
     @Override
-    public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving){
-        if(!worldIn.isRemote){
+    public void onBlockAdded(BlockState state, World worldIn, BlockPos pos, BlockState oldState, boolean isMoving) {
+        if (!worldIn.isRemote) {
             TileEntity te = worldIn.getTileEntity(pos);
-            if (te instanceof TemporalSiphonTile){
+            if (te instanceof TemporalSiphonTile) {
                 TardisHelper.getConsoleInWorld(worldIn).ifPresent(tile -> {
                     if (worldIn.getTileEntity(te.getPos().down()) instanceof ConsoleTile) {
                         tile.getInteriorManager().setAlarmOn(true);
@@ -112,10 +96,10 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
     }
 
     @Override
-    public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving){
-        if(!worldIn.isRemote){
+    public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!worldIn.isRemote) {
             TemporalSiphonTile te = (TemporalSiphonTile) worldIn.getTileEntity(pos);
-            if (te != null){
+            if (te != null) {
                 ((TemporalSiphonTile) te).isWorking = false;
                 this.isWorking = false;
             }
@@ -143,7 +127,7 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
 
     @Override
     public void onBlockHarvested(World worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
-        if(!worldIn.isRemote){
+        if (!worldIn.isRemote) {
 
             TileEntity tileentity = worldIn.getTileEntity(pos);
             if (tileentity instanceof TemporalSiphonTile) {
@@ -155,8 +139,8 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
                 nbt.putFloat("artron_value", artron);
                 item.setTag(nbt);
 
-                item.setDamage(255 - (int)(255 * artron/255));
-                ItemEntity itementity = new ItemEntity(worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), item);
+                item.setDamage(255 - (int) (255 * artron / 255));
+                ItemEntity itementity = new ItemEntity(worldIn, (double) pos.getX(), (double) pos.getY(), (double) pos.getZ(), item);
                 itementity.setDefaultPickupDelay();
                 worldIn.addEntity(itementity);
             }
@@ -168,13 +152,13 @@ public class TemporalSiphonBlock extends TileBlock implements IMakeItem {
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
         TileEntity te = worldIn.getTileEntity(pos);
-        if (te instanceof TemporalSiphonTile){
+        if (te instanceof TemporalSiphonTile) {
             if (this.isWorking) {
                 TardisHelper.getConsoleInWorld(worldIn).ifPresent(tile -> {
                     if (tile.getArtron() > 0) {
                         // Old Reliable
-                        if(rand.nextDouble() < 0.15) {
-                            for(int i = 0; i < 18; ++ i) {
+                        if (rand.nextDouble() < 0.15) {
+                            for (int i = 0; i < 18; ++i) {
                                 double angle = Math.toRadians(i * 20);
                                 double x = Math.sin(angle);
                                 double z = Math.cos(angle);

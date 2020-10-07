@@ -26,11 +26,9 @@ public class BoothExteriorTile extends ExteriorTile{
         super(MTiles.EXTERIOR_BOOTH);
     }*/
 
-
+    @Override
     public void tick() {
-
-        System.out.println("Ticking");
-
+        super.tick();
     }
 
     @Override
