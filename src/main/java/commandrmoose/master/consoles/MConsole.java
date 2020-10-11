@@ -33,7 +33,7 @@ public class MConsole implements IRegisterable<Console> {
     @SubscribeEvent
     public static void eventBusSubscriber(FMLCommonSetupEvent event) {
         TardisRegistries.registerRegisters(() -> {
-            COPPER = register(new Console(() -> MBlocks.console_copper.getDefaultState(), "copper"), "copper");
+           // COPPER = register(new Console(() -> MBlocks.console_copper.getDefaultState(), "copper"), "copper");
 
 
         });
