@@ -4,7 +4,7 @@ issueTrackerURL="https://github.com/CommandrMoose/Masters-Delight/issues" #optio
 
 [[mods]] #mandatory
 modId="master" #mandatory
-version="0.1A" #mandatory
+version="0.1B" #mandatory
 displayName="The Master's Delight" #mandatory
 #updateJSONURL="/" #optional
 displayURL="" #optional

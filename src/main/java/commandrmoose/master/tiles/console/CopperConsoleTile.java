@@ -1,5 +1,6 @@
 package commandrmoose.master.tiles.console;
 
+import commandrmoose.master.consoles.positionscale.CopperControlPosScale;
 import commandrmoose.master.tiles.MTiles;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -56,7 +57,7 @@ public class CopperConsoleTile extends ConsoleTile implements ITickableTileEntit
                 ControlRegistry.ControlEntry<?> controlEntry = (ControlRegistry.ControlEntry)var1.next();
                 IControl control = controlEntry.spawn(this);
                 ControlEntity entity = (ControlEntity) TEntities.CONTROL.create(this.world);
-                entity.setPosition((double)this.getPos().getX() + 0.5D, (double)this.getPos().getY() + 3f, (double)this.getPos().getZ() + 0.5D);
+                CopperControlPosScale.moveControlPositions(this, entity, control);
                 entity.setControl(control);
                 entity.setConsole(this);
                 ((ServerWorld)this.world).addEntityIfNotDuplicate(entity);

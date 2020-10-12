@@ -38,7 +38,7 @@ public class MasterExteriors {
     }
 
     public static void init() {
-        BOOTH = register(new ResourceLocation(Master.MODID, "booth"), new TwoBlockBasicExterior(() -> MBlocks.exterior_booth.getDefaultState(), true, IDoorType.EnumDoorType.TT_CAPSULE, new ResourceLocation(Master.MODID, "textures/gui/exteriors/woah.png")));
+        //BOOTH = register(new ResourceLocation(Master.MODID, "booth"), new TwoBlockBasicExterior(() -> MBlocks.exterior_booth.getDefaultState(), true, IDoorType.EnumDoorType.TT_CAPSULE, new ResourceLocation(Master.MODID, "textures/gui/exteriors/woah.png")));
     }
 
 }

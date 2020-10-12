@@ -6,6 +6,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.model.RendererModel;
 import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 import net.tardis.mod.controls.CommunicatorControl;
 import net.tardis.mod.controls.HandbrakeControl;
 import net.tardis.mod.controls.IncModControl;
@@ -1837,19 +1839,27 @@ public class CopperConsoleModel extends Model {
 	public void render(ConsoleTile tile) {
 
 
-		if (rotateRight) {
-			bone149.rotateAngleY = (float) (bone149.rotateAngleY + Math.sin(Math.toRadians(1.5f)));
-			if (bone149.rotateAngleY == Math.toRadians(359)) {
-				rotateRight = false;
-			}
+		bone149.rotateAngleY = (float) (bone149.rotateAngleY + Math.toRadians(1.5f));
+
+		float rotation = MathHelper.clamp(MathHelper.sin((Minecraft.getInstance().player.ticksExisted + Minecraft.getInstance().getRenderPartialTicks()) / 60) * 10, 0, 90);
+		bone151.rotateAngleY = rotation;
+
+		Direction consoleFacing = tile.getExteriorDirection();
+		if (consoleFacing == Direction.SOUTH) {
+			facingcontrol.rotateAngleY = (float) Math.toRadians(0f);
+		} else if (consoleFacing == Direction.NORTH) {
+			facingcontrol.rotateAngleY = (float) Math.toRadians(180f);
+		} else if (consoleFacing == Direction.EAST) {
+			facingcontrol.rotateAngleY = (float) Math.toRadians(270f);
+		}else if (consoleFacing == Direction.WEST) {
+			facingcontrol.rotateAngleY = (float) Math.toRadians(90f);
 		}
 
-		if (!rotateRight) {
-			bone149.rotateAngleY = (float) (bone149.rotateAngleY + Math.sin(Math.toRadians(-1.5f)));
-			if (bone149.rotateAngleY == Math.toRadians(1f)) {
-				rotateRight = true;
-			}
+		HandbrakeControl handbrake = tile.getControl(HandbrakeControl.class);
+		if (handbrake.isFree()) {
+			verticallanding.rotateAngleX = (float) (Math.toRadians(20F));
 		}
+
 
 
 		float prevRotor = tile.flightTicks == 0 ? 0 : 0.2F - ((float)Math.cos((tile.flightTicks - 1) * 0.1F) * 0.2F);
@@ -1863,8 +1873,7 @@ public class CopperConsoleModel extends Model {
 		ThrottleControl throttle = tile.getControl(ThrottleControl.class);
 		//this.throttle_real.offsetZ = throttle.getAmount() * 0.12F;
 		
-		HandbrakeControl handbrake = tile.getControl(HandbrakeControl.class);
-		this.handbreak.offsetZ = handbrake.isFree() ? 0F : 0.12F;
+
 		
 		CommunicatorControl communicator = tile.getControl(CommunicatorControl.class);
 		//this.com_but.offsetY = this.com_but2.offsetY = this.com_but3.offsetY = communicator.getAnimationTicks() == 0 ? 0 : 0.003F;
