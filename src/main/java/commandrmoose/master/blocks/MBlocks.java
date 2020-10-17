@@ -49,6 +49,8 @@ public class MBlocks {
     public static ToasterBlock toaster = register(new ToasterBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 0.5f, 0.5f), "toaster");
 
     public static RoundelBlock roundel_copper = register(new RoundelBlock(Block.Properties.create(Material.ROCK), SoundType.STONE, 1.25f, 4.2f), "roundel_copper", TItemGroups.ROUNDELS);
+    public static RoundelBlock roundel_copper_large = register(new RoundelBlock(Block.Properties.create(Material.ROCK), SoundType.STONE, 1.25f, 4.2f), "roundel_copper_large", TItemGroups.ROUNDELS);
+    public static RoundelBlock roundel_copper_small = register(new RoundelBlock(Block.Properties.create(Material.ROCK), SoundType.STONE, 1.25f, 4.2f), "roundel_copper_small", TItemGroups.ROUNDELS);
 
     @SubscribeEvent
     public static void register(RegistryEvent.Register<Block> event){
