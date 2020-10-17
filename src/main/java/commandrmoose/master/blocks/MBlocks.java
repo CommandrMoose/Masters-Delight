@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 import net.tardis.mod.blocks.ConsoleBlock;
 import net.tardis.mod.blocks.ExteriorBlock;
+import net.tardis.mod.blocks.RoundelBlock;
 
 import java.util.ArrayList;
 import java.util.List;
