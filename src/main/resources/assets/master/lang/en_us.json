@@ -18,7 +18,9 @@
   "master.subtitle.drill_loop": "Siphon Drill",
   "master.subtitle.bell_ring": "Bell Ring",
   "master.subtitle.time_blast": "Engine Roar",
-  "master.subtitle.alert_alarm": "Alert Alarm"
+  "master.subtitle.alert_alarm": "Alert Alarm",
+
+  "protocol.master.deleteroom": "Delete all rooms"
 
 
 }

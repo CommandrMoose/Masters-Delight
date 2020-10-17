@@ -24,13 +24,19 @@ public class MTiles {
 
     public static List<TileEntityType<?>> TYPES = new ArrayList<>();
 
+
+    // Consoles
     public static TileEntityType<CopperConsoleTile> CONSOLE_COPPER = register(CopperConsoleTile::new, "console_copper", MBlocks.console_copper);
 
+    // Exteriors
     public static TileEntityType<BoothExteriorTile> EXTERIOR_BOOTH = register(BoothExteriorTile::new, "exterior_booth", MBlocks.exterior_booth);
 
-
+    // Devices
     public static TileEntityType<TemporalSiphonTile> TEMPORAL_SIPHON = register(TemporalSiphonTile::new, "temporal_siphon", MBlocks.temporal_siphon);
     public static TileEntityType<HalliganKitTile> HALLIGAN_KIT = register(HalliganKitTile::new, "halligan_kit", MBlocks.halligan_kit);
+
+    // Other
+    public static TileEntityType<BrokenEngineTile> BROKEN_ENGINE = register(BrokenEngineTile::new, "broken_engine", MBlocks.broken_engine);
 
     @SubscribeEvent
     public static void register(RegistryEvent.Register<TileEntityType<?>> event){

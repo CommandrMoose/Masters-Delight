@@ -48,12 +48,6 @@ public class CopperControlPosScale extends ConsoleControlTransform {
 
     }
 
-    public static void updateControlSize(TileEntity tile)
-    {
-
-    }
-
-
     static void setControlPos(ConsoleTile console, ControlEntity control, Vec3d offset)
     {
         control.teleportKeepLoaded(console.getPos().getX() + 0.5f + offset.x, console.getPos().getY() + 0.5f + offset.y,console.getPos().getZ() + 0.5f + offset.z);

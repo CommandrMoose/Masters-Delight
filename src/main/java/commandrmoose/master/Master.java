@@ -3,6 +3,7 @@ package commandrmoose.master;
 import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.data.LootTableCreation;
 import commandrmoose.master.exterior.MasterExteriors;
+import commandrmoose.master.protocols.ProtocolRegistry;
 import commandrmoose.master.proxy.ClientProxy;
 import commandrmoose.master.proxy.IProxy;
 import commandrmoose.master.proxy.ServerProxy;
@@ -24,6 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.tardis.mod.exterior.ExteriorRegistry;
 import net.tardis.mod.items.TItems;
 import net.tardis.mod.recipe.WeldRecipe;
+import net.tardis.mod.registries.TardisRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,6 +55,7 @@ public class Master {
 
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> proxy = new ClientProxy());
         MasterExteriors.init();
+        TardisRegistries.registerRegisters(ProtocolRegistry::registerAll);
     }
 
     @SubscribeEvent

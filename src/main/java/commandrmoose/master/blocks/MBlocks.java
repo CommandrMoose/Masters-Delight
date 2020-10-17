@@ -35,6 +35,7 @@ public class MBlocks {
     // Tiles
     public static TemporalSiphonBlock temporal_siphon = register(new TemporalSiphonBlock(Block.Properties.create(Material.ANVIL), SoundType.ANVIL, 1.25F, 4.2F), "temporal_siphon");
     public static HalliganKitBlock halligan_kit = register(new HalliganKitBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 1.25f, 6f), "halligan_kit");
+    public static TileBlock broken_engine = register(new TileBlock(Block.Properties.create(Material.ANVIL).hardnessAndResistance(100f, 100f)), "broken_engine");
 
     // Exteriors
     public static BoothExteriorBlock exterior_booth = register(new BoothExteriorBlock(), "exterior_booth");

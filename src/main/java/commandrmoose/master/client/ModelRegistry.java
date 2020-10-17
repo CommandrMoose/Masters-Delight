@@ -6,9 +6,11 @@ import commandrmoose.master.client.renderers.consoles.CopperConsoleRenderer;
 import commandrmoose.master.client.renderers.entity.adventure.WatcherRenderer;
 import commandrmoose.master.client.renderers.entity.passive.TemporalBatRenderer;
 import commandrmoose.master.client.renderers.exterior.BoothExteriorRenderer;
+import commandrmoose.master.client.renderers.tile.BrokenEngineRenderer;
 import commandrmoose.master.client.renderers.tile.TemporalSiphonRenderer;
 import commandrmoose.master.entity.adventure.WatcherEntity;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
+import commandrmoose.master.tiles.BrokenEngineTile;
 import commandrmoose.master.tiles.TemporalSiphonTile;
 import commandrmoose.master.tiles.console.CopperConsoleTile;
 import commandrmoose.master.tiles.exterior.BoothExteriorTile;
@@ -34,6 +36,8 @@ public class ModelRegistry {
 
         ClientRegistry.bindTileEntitySpecialRenderer(CopperConsoleTile.class, new CopperConsoleRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(TemporalSiphonTile.class, new TemporalSiphonRenderer());
+
+        ClientRegistry.bindTileEntitySpecialRenderer(BrokenEngineTile.class, new BrokenEngineRenderer());
 
     }
 }

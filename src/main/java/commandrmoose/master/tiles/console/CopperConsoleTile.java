@@ -2,6 +2,7 @@ package commandrmoose.master.tiles.console;
 
 import commandrmoose.master.consoles.positionscale.CopperControlPosScale;
 import commandrmoose.master.tiles.MTiles;
+import net.minecraft.entity.EntitySize;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.AxisAlignedBB;
