@@ -17,6 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ObjectHolder;
 import net.tardis.mod.blocks.ConsoleBlock;
 import net.tardis.mod.blocks.ExteriorBlock;
+import net.tardis.mod.blocks.RoundelBlock;
+import net.tardis.mod.itemgroups.TItemGroups;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +48,7 @@ public class MBlocks {
     // Blocks
     public static ToasterBlock toaster = register(new ToasterBlock(Block.Properties.create(Material.IRON), SoundType.METAL, 0.5f, 0.5f), "toaster");
 
+    public static RoundelBlock roundel_copper = register(new RoundelBlock(Block.Properties.create(Material.ROCK), SoundType.STONE, 1.25f, 4.2f), "roundel_copper", TItemGroups.ROUNDELS);
 
     @SubscribeEvent
     public static void register(RegistryEvent.Register<Block> event){
