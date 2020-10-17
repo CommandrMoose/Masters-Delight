@@ -7,6 +7,8 @@
   "block.master.toaster": "Temporal Toaster",
 
   "block.master.roundel_copper": "Copper Roundel",
+  "block.master.roundel_copper_large": "Large Copper Roundel",
+  "block.master.roundel_copper_small": "Small Copper Roundel",
 
   "advancements.master.interior.potent": "Doctor in Distress",
   "advancements.master.interior.potent.desc": "Send a signal with a Psychic Cube.",
