@@ -154,5 +154,17 @@
     "x_offset": 23,
     "y_offset": 19,
     "z_offset": 30
+  },
+  {
+    "schematic_resource_location": "master:tardis/structures/interior_copper",
+    "namespaced_id": "master:interior_copper",
+    "display_name": "Copper Interior",
+    "image_resource_location": "master:textures/gui/interiors/copper_preview.png",
+    "unlocked_by_default": true,
+    "using_remote_image" : false,
+    "remote_image" : "",
+    "x_offset": 30,
+    "y_offset": 5,
+    "z_offset": 30
   }
 ]
