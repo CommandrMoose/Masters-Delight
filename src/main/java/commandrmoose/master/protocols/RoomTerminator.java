@@ -42,7 +42,7 @@ public class RoomTerminator extends Protocol {
     }
 
     @Override
-    public String getDisplayName() {
+    public String getDisplayName(ConsoleTile consoleTile) {
         return TRANSLATION.getFormattedText();
     }
 

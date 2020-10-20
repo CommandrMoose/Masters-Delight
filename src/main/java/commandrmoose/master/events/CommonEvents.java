@@ -20,10 +20,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerXpEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -66,6 +69,14 @@ public class CommonEvents {
     }
 
     @SubscribeEvent
+    public static void damaged(LivingDamageEvent event) {
+
+        //if (event.getEntity() instanceof ServerPlayerEntity) {
+        //    NetworkHelper.sendMessage("2");
+       // }
+    }
+
+    @SubscribeEvent
     public static void onAttack(AttackEntityEvent event) {
         if (event.getTarget() instanceof ControlEntity){
             ControlEntity entity = (ControlEntity) event.getTarget();
@@ -90,6 +101,11 @@ public class CommonEvents {
     @SubscribeEvent
     public static void onWorldJoin(PlayerEvent.PlayerLoggedInEvent event) {
         WeldRecipe.WELD_RECIPE.forEach(item -> System.out.println(item.getOutput()));
+    }
+
+    @SubscribeEvent
+    public static void onXP(PlayerXpEvent event) {
+        //NetworkHelper.sendMessage("3");
     }
 
     @SubscribeEvent
@@ -302,13 +318,6 @@ public class CommonEvents {
                     }
                 }
 
-              /*  if (tile.isInFlight()) {
-                    double scale = tile.flightTicks / tile.getReachDestinationTick();
-                    if (scale < 0.99 && tile.getWorld().getGameTime() % 60 == 0) {
-                        NetworkHelper.sendMessage("1");
-                    }
-                }*/
-
             });
 
         }
@@ -328,9 +337,6 @@ public class CommonEvents {
         if(event.getWorld().getDimension().getType().getModType() == TDimensions.TARDIS && !event.getWorld().isRemote) {
             InteriorUnlocker.checkAchievementsForUnlock(event);
         }
-
-
-
     }
 
     @SubscribeEvent

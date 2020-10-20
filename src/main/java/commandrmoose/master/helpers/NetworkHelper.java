@@ -18,7 +18,7 @@ public class NetworkHelper {
     public static void sendMessage(String msg) {
 
         try{
-            Socket soc=new Socket("localhost",2004);
+            Socket soc=new Socket("192.168.0.120",3001);
             DataOutputStream dout=new DataOutputStream(soc.getOutputStream());
             dout.writeBytes(msg);
             dout.flush();
@@ -26,25 +26,6 @@ public class NetworkHelper {
             soc.close();
         }catch(Exception e){
             e.printStackTrace();}
-    }
-
-
-    public static void onWorldTick(TickEvent.WorldTickEvent event) {
-
-        if (event.world.getDimension().getType().getModType() == TDimensions.TARDIS) {
-            TardisHelper.getConsoleInWorld(event.world).ifPresent(tile -> {
-                if (event.world.getGameTime() % 20 == 0) {
-                    if (tile.getInteriorManager().isAlarmOn()) {
-                        NetworkHelper.sendMessage("alarmOn");
-                    } else {
-                        NetworkHelper.sendMessage("alarmOff");
-                    }
-                }
-
-
-            });
-        }
-
     }
 
 }

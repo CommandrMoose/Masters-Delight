@@ -18,9 +18,9 @@ public class CopperConsoleRenderer extends TileEntityRenderer<CopperConsoleTile>
 	@Override
 	public void render(CopperConsoleTile tileEntityIn, double x, double y, double z, float partialTicks, int destroyStage) {
 		GlStateManager.pushMatrix();
-		GlStateManager.translated(x + 0.5, y + 1.725, z + 0.5);
+		GlStateManager.translated(x + 0.5, y + 1.75, z + 0.5);
 		GlStateManager.enableRescaleNormal();
-		GlStateManager.scaled(1.1, 1.1, 1.1);
+		GlStateManager.scaled(1.15, 1.15, 1.15);
 		GlStateManager.disableRescaleNormal();
 		GlStateManager.rotated(180, 0, 0, 1);
 		this.bindTexture(TEXTURE);

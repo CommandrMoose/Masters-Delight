@@ -8,14 +8,7 @@ import net.minecraft.client.renderer.model.Model;
 import net.minecraft.client.renderer.model.ModelBox;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
-import net.tardis.mod.controls.CommunicatorControl;
-import net.tardis.mod.controls.HandbrakeControl;
-import net.tardis.mod.controls.IncModControl;
-import net.tardis.mod.controls.RandomiserControl;
-import net.tardis.mod.controls.ThrottleControl;
-import net.tardis.mod.controls.XControl;
-import net.tardis.mod.controls.YControl;
-import net.tardis.mod.controls.ZControl;
+import net.tardis.mod.controls.*;
 import net.tardis.mod.enums.EnumDoorState;
 import net.tardis.mod.helper.Helper;
 import net.tardis.mod.misc.WorldText;
@@ -1856,30 +1849,40 @@ public class CopperConsoleModel extends Model {
 		}
 
 		HandbrakeControl handbrake = tile.getControl(HandbrakeControl.class);
-		if (handbrake.isFree()) {
-			verticallanding.rotateAngleX = (float) (Math.toRadians(20F));
+		if (!handbrake.isFree()) {
+			verticallanding.rotateAngleX = (float) (Math.toRadians(45F));
+		} else {
+			verticallanding.rotateAngleX = (float) (Math.toRadians(-45F));
 		}
 
+		RefuelerControl refuelerControl = tile.getControl(RefuelerControl.class);
+		if (refuelerControl.isRefueling()) {
+			refuel.rotateAngleX = (float) (Math.toRadians(-66f));
+		} else {
+			refuel.rotateAngleX = (float) (Math.toRadians(-8f));
+		}
+
+		LandingTypeControl landingTypeControl = tile.getControl(LandingTypeControl.class);
+		if (landingTypeControl.getLandType() == LandingTypeControl.EnumLandType.DOWN) {
+			handbreak.rotateAngleX = (float) (Math.toRadians(45F));
+		} else {
+			handbreak.rotateAngleX = (float) (Math.toRadians(-45F));
+		}
 
 
 		float prevRotor = tile.flightTicks == 0 ? 0 : 0.2F - ((float)Math.cos((tile.flightTicks - 1) * 0.1F) * 0.2F);
 		float rotor = 0.2F - ((float)Math.cos(tile.flightTicks * 0.1F) * 0.2F);
-		//this.timerotar.offsetY = prevRotor - (prevRotor - rotor) * Minecraft.getInstance().getRenderPartialTicks();
+		this.rotarupndown.offsetY = prevRotor - (prevRotor - rotor) * Minecraft.getInstance().getRenderPartialTicks();
 		
 		RandomiserControl random = tile.getControl(RandomiserControl.class);
 		float randomOff = random.getAnimationTicks() == 0 ? 0 : 0.006F;
 		//this.random_but_1.offsetY = this.random_but_6.offsetY = this.random_but_8.offsetY = randomOff;
 		
-		ThrottleControl throttle = tile.getControl(ThrottleControl.class);
-		//this.throttle_real.offsetZ = throttle.getAmount() * 0.12F;
-		
+		ThrottleControl throttleA = tile.getControl(ThrottleControl.class);
+		this.throttle.rotateAngleX = -45 + throttleA.getAmount() * -10F;
 
-		
-		CommunicatorControl communicator = tile.getControl(CommunicatorControl.class);
-		//this.com_but.offsetY = this.com_but2.offsetY = this.com_but3.offsetY = communicator.getAnimationTicks() == 0 ? 0 : 0.003F;
-		
 		tile.getDoor().ifPresent(door -> {
-		//	this.door.rotateAngleX = (float)Math.toRadians(door.getOpenState() == EnumDoorState.CLOSED ? 25 : 0);
+			this.doorcontrol.rotateAngleX = (float)Math.toRadians(door.getOpenState() == EnumDoorState.CLOSED ? -10 : -100);
 		});
 		
 		IncModControl inc = tile.getControl(IncModControl.class);
