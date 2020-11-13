@@ -31,6 +31,9 @@ public class MBlocks {
     public static List<Block> BLOCKS = new ArrayList<>();
 
 
+    public static TempleSpawnerBlock temple_debug = register(new TempleSpawnerBlock(Block.Properties.create(Material.BARRIER).variableOpacity().hardnessAndResistance(99999F, 99999F)), "temple_debug");
+
+
     // Consoles
     public static MConsoleBlock console_copper = register(new MConsoleBlock(), "console_copper", null, false);
 

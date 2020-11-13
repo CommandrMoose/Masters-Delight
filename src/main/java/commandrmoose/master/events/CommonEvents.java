@@ -7,7 +7,6 @@ import commandrmoose.master.consoles.positionscale.CopperControlPosScale;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import commandrmoose.master.helpers.InteriorUnlocker;
 import commandrmoose.master.helpers.MasterHelper;
-import commandrmoose.master.helpers.NetworkHelper;
 import commandrmoose.master.sounds.MSounds;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.FishingRodItem;
@@ -71,9 +70,9 @@ public class CommonEvents {
     @SubscribeEvent
     public static void damaged(LivingDamageEvent event) {
 
-        //if (event.getEntity() instanceof ServerPlayerEntity) {
-        //    NetworkHelper.sendMessage("2");
-       // }
+        if (event.getEntity() instanceof ServerPlayerEntity) {
+           // NetworkHelper.sendMessage("2");
+        }
     }
 
     @SubscribeEvent
@@ -105,7 +104,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void onXP(PlayerXpEvent event) {
-        //NetworkHelper.sendMessage("3");
+       // NetworkHelper.sendMessage("3");
     }
 
     @SubscribeEvent

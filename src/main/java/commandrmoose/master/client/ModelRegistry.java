@@ -4,11 +4,13 @@ import commandrmoose.master.Master;
 import commandrmoose.master.blocks.exteriors.BoothExteriorBlock;
 import commandrmoose.master.client.renderers.consoles.CopperConsoleRenderer;
 import commandrmoose.master.client.renderers.entity.adventure.WatcherRenderer;
+import commandrmoose.master.client.renderers.entity.aggressive.TempleGolemRenderer;
 import commandrmoose.master.client.renderers.entity.passive.TemporalBatRenderer;
 import commandrmoose.master.client.renderers.exterior.BoothExteriorRenderer;
 import commandrmoose.master.client.renderers.tile.BrokenEngineRenderer;
 import commandrmoose.master.client.renderers.tile.TemporalSiphonRenderer;
 import commandrmoose.master.entity.adventure.WatcherEntity;
+import commandrmoose.master.entity.aggressive.TempleGolemEntity;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import commandrmoose.master.tiles.BrokenEngineTile;
 import commandrmoose.master.tiles.TemporalSiphonTile;
@@ -30,6 +32,7 @@ public class ModelRegistry {
     public static void register(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(TemporalBatEntity.class, TemporalBatRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(WatcherEntity.class, WatcherRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(TempleGolemEntity.class, TempleGolemRenderer::new);
 
 
         ClientRegistry.bindTileEntitySpecialRenderer(BoothExteriorTile.class, new BoothExteriorRenderer());

@@ -2,6 +2,7 @@ package commandrmoose.master;
 
 import commandrmoose.master.blocks.MBlocks;
 import commandrmoose.master.data.LootTableCreation;
+import commandrmoose.master.dimensions.MDimensions;
 import commandrmoose.master.exterior.MasterExteriors;
 import commandrmoose.master.protocols.ProtocolRegistry;
 import commandrmoose.master.proxy.ClientProxy;
@@ -15,6 +16,8 @@ import net.minecraft.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
@@ -45,6 +48,7 @@ public class Master {
         FMLJavaModLoadingContext.get().getModEventBus().register(this);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new MDimensions());
 
     }
 
@@ -56,7 +60,14 @@ public class Master {
         DistExecutor.runWhenOn(Dist.CLIENT, () -> () -> proxy = new ClientProxy());
         MasterExteriors.init();
         TardisRegistries.registerRegisters(ProtocolRegistry::registerAll);
+
     }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onNewRegistries(RegistryEvent.NewRegistry e) {
+        MDimensions.DIMENSIONS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
 
     @SubscribeEvent
     public void gatherData(GatherDataEvent e) {

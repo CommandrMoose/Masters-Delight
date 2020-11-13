@@ -2,6 +2,7 @@ package commandrmoose.master.entity;
 
 import commandrmoose.master.Master;
 import commandrmoose.master.entity.adventure.WatcherEntity;
+import commandrmoose.master.entity.aggressive.TempleGolemEntity;
 import commandrmoose.master.entity.passive.TemporalBatEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -22,12 +23,14 @@ public class MEntities {
 
     public static final EntityType<TemporalBatEntity> TEMPORAL_BAT = registerMob(TemporalBatEntity::new, TemporalBatEntity::new, EntityClassification.CREATURE, 0.5f, 0.5f, "temporal_bat", false);
     public static final EntityType<WatcherEntity> WATCHER = registerMob(WatcherEntity::new, WatcherEntity::new, EntityClassification.MONSTER, 0.5f, 0.5f, "watcher", false);
+    public static final EntityType<TempleGolemEntity> TEMPLEGOLEM = registerMob(TempleGolemEntity::new, TempleGolemEntity::new, EntityClassification.MONSTER, 1.5f, 4f, "temple_golem", false);
 
     @SubscribeEvent
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> event) {
         event.getRegistry().registerAll(
                 TEMPORAL_BAT,
-                WATCHER
+                WATCHER,
+                TEMPLEGOLEM
         );
     }
 
